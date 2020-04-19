@@ -1,0 +1,14 @@
+D:\tieza\TravelAgency\TravelAgency.BLL\bin\Release\netcoreapp2.2\TravelAgency.BLL.deps.json
+D:\tieza\TravelAgency\TravelAgency.BLL\bin\Release\netcoreapp2.2\TravelAgency.BLL.dll
+D:\tieza\TravelAgency\TravelAgency.BLL\bin\Release\netcoreapp2.2\TravelAgency.BLL.pdb
+D:\tieza\TravelAgency\TravelAgency.BLL\bin\Release\netcoreapp2.2\TravelAgency.DAL.dll
+D:\tieza\TravelAgency\TravelAgency.BLL\bin\Release\netcoreapp2.2\TravelAgency.Model.dll
+D:\tieza\TravelAgency\TravelAgency.BLL\bin\Release\netcoreapp2.2\TravelAgency.DAL.pdb
+D:\tieza\TravelAgency\TravelAgency.BLL\bin\Release\netcoreapp2.2\TravelAgency.Model.pdb
+D:\tieza\TravelAgency\TravelAgency.BLL\obj\Release\netcoreapp2.2\TravelAgency.BLL.csprojAssemblyReference.cache
+D:\tieza\TravelAgency\TravelAgency.BLL\obj\Release\netcoreapp2.2\TravelAgency.BLL.csproj.CoreCompileInputs.cache
+D:\tieza\TravelAgency\TravelAgency.BLL\obj\Release\netcoreapp2.2\TravelAgency.BLL.AssemblyInfoInputs.cache
+D:\tieza\TravelAgency\TravelAgency.BLL\obj\Release\netcoreapp2.2\TravelAgency.BLL.AssemblyInfo.cs
+D:\tieza\TravelAgency\TravelAgency.BLL\obj\Release\netcoreapp2.2\TravelAgency.BLL.csproj.CopyComplete
+D:\tieza\TravelAgency\TravelAgency.BLL\obj\Release\netcoreapp2.2\TravelAgency.BLL.dll
+D:\tieza\TravelAgency\TravelAgency.BLL\obj\Release\netcoreapp2.2\TravelAgency.BLL.pdb
