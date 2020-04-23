@@ -34,7 +34,7 @@ export class UpdateHotel extends Component {
     }
 
     validateDescription(description) {
-        return description.length > 2 && description.length <= 70;
+        return description.length > 2 && description.length <= 500;
     }
 
     onChangeDescription(e) {
@@ -167,19 +167,19 @@ export class UpdateHotel extends Component {
         return (
             <div className="card mb-3">
                 <div className="card-header text-center">
-                    <h2>UPDATE HOTEL</h2>
+                    <h2>ОБНОВИТЬ ДАННЫЕ ОБ ОТЕЛЕ</h2>
                 </div>
                 <div className="card-body">
                     <form onSubmit={this.handleSubmit}>
                         <div className="form-group">
-                            <input type="text" value={this.state.name} placeholder="Tour" className="form-control" onChange={this.onChangeName} style={{ borderColor: nameColor }} />
+                            <input type="text" value={this.state.name} placeholder="Отель" className="form-control" onChange={this.onChangeName} style={{ borderColor: nameColor }} />
                         </div>
                         <div className="form-group">
-                            <input type="number" value={this.state.cost} placeholder="Cost" className="form-control" onChange={this.onChangeCost} style={{ borderColor: costColor }} />
+                            <input type="number" value={this.state.cost} placeholder="Цена" className="form-control" onChange={this.onChangeCost} style={{ borderColor: costColor }} />
                         </div>
                         <div className="form-group">
                             <select value={this.state.tourId} className="form-control" onChange={this.onChangeTour} style={{ borderColor: tourColor }}>
-                                <option value="0">Select tour</option>
+                                <option value="0">Выбрать тур</option>
                                 {
                                     this.state.tourList.map(tour => {
                                         return <option key={tour.tourId} value={tour.tourId}>{tour.tourName}</option>
@@ -188,7 +188,7 @@ export class UpdateHotel extends Component {
                             </select>
                         </div>
                         <div className="form-group">
-                            <input type="number" value={this.state.clas} placeholder="Class" className="form-control" onChange={this.onChangeClass} style={{ borderColor: classColor }} />
+                            <input type="number" value={this.state.clas} placeholder="Звезды" className="form-control" onChange={this.onChangeClass} style={{ borderColor: classColor }} />
                         </div>
                         <div className="form-group">
                             <textarea placeholder="Description" value={this.state.description} onChange={this.onChangeDescription} style={{ borderColor: descriptionColor }} className="form-control" />
@@ -196,7 +196,7 @@ export class UpdateHotel extends Component {
                         <div className="form-group">    
                             <input type="file" name="imagePath" onChange={e => this.setFile(e)} />
                         </div>
-                        <input type="submit" value="Save" className="btn btn-success" />
+                        <input type="submit" value="Сохранить" className="btn btn-success" />
                     </form>
                 </div>
             </div>
@@ -208,12 +208,12 @@ export class UpdateHotel extends Component {
         return (
             <div className="card">
                 <div className="card-header text-center">
-                    <h2>HOTEL</h2>
+                    <h2>ОТЕЛЬ</h2>
                 </div>
                 <div className="card-body text-center">
                     <h3>{this.state.name}</h3>
-                    <p>COST: {this.state.cost}$</p>
-                    <p>CLASS: {this.state.clas}</p>
+                    <p>Цена: {this.state.cost}$</p>
+                    <p>Звезды: {this.state.clas}</p>
                     <textarea value={this.state.description} disabled className="form-control"></textarea>
                     <div className="card-body text-center">
                         <img style={{maxWidth: '100%'}} src={atob(this.state.imagePath)} alt="imagePath"/>

@@ -11,10 +11,10 @@ class Item extends Component {
             <tr>
                 <td><b>{this.props.name}</b></td>
                 <td>
-                    <Link className="btn btn-warning" to={`/updateHotel/${this.props.id}`}>UPDATE</Link>
+                    <Link className="btn btn-warning" to={`/updateHotel/${this.props.id}`}>ОБНОВИТЬ</Link>
                 </td>
                 <td>
-                    <Link className="btn btn-danger" to={`/deleteHotel/${this.props.id}`}>DELETE</Link>
+                    <Link className="btn btn-danger" to={`/deleteHotel/${this.props.id}`}>УДАЛИТЬ</Link>
                 </td>
             </tr>
         );
@@ -30,14 +30,14 @@ export class Table extends Component {
     render() {
         return (
             <div className="text-center">
-                <Link className="btn btn-success btn-block mb-3" to="/createHotel">CREATE</Link>
+                <Link className="btn btn-success btn-block mb-3" to="/createHotel">СОЗДАТЬ НОВЫЙ ОТЕЛЬ</Link>
 
                 <table className="table">
                     <thead>
                         <tr>
-                            <th>HOTEL</th>
-                            <th>UPDATE</th>
-                            <th>DELETE</th>
+                            <th>ОТЕЛЬ</th>
+                            <th>ОБНОВИТЬ</th>
+                            <th>УДАЛИТЬ</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -49,9 +49,9 @@ export class Table extends Component {
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th>HOTEL</th>
-                            <th>UPDATE</th>
-                            <th>DELETE</th>
+                            <th>ОТЕЛЬ</th>
+                            <th>ОБНОВИТЬ</th>
+                            <th>УДАЛИТЬ</th>
                         </tr>
                     </tfoot>
                 </table>

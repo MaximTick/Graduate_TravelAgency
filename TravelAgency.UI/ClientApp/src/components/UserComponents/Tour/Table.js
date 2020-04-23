@@ -16,21 +16,28 @@ class Item extends Component {
                     <h2>{this.props.name}</h2>
                 </div>
                 <div className="card-body">
-                    <div className="row">
-                        <div className="col-md-10">
-                            <p>COST: {this.props.cost}$</p>
-                            <p>DATE START: {date.toLocaleDateString()}</p>
-                            <p>COUNTRY: {this.props.country}</p>
-                            <p>DURATION: {this.props.duration} days</p>
-                            <div>
+                <div className="row"> 
+                    <div className="col-md-10">                   
+                        <dl className="row">
+                            <dt className="col-sm-3">Цена:</dt>
+                            <dd className="col-sm-9">{this.props.cost}$</dd>
+                            <dt className="col-sm-3">Дата отаправления:</dt>
+                            <dd className="col-sm-9">{date.toLocaleDateString()}</dd>
+                            <dt className="col-sm-3">Страна:</dt>
+                            <dd className="col-sm-9">{this.props.country}</dd>
+                            <dt className="col-sm-3">Транспорт:</dt>
+                            <dd className="col-sm-9">{this.props.transport}</dd>
+                            <dt className="col-sm-3">Описание тура:</dt>
+                            <dd className="col-sm-9">{this.props.aboutTour}</dd>
+                        </dl>
+                        <div>
                             <img style={{maxWidth: '100%'}} src={atob(this.props.imagePath)} />
-                            </div>
-                        </div>
-                        <div className="col-md-2 text-center">
-                            <Link className="btn btn-outline-warning" to={`/hotelsTour/${this.props.id}`}>SHOW HOTELS</Link>
                         </div>
                     </div>
-                  
+                    <div className="col-md-2 text-center">
+                            <Link className="btn btn-outline-warning" to={`/hotelsTour/${this.props.id}`}>Просмотр отелей</Link>
+                    </div>
+                 </div>                               
                 </div>
             </div>
         );
@@ -56,6 +63,8 @@ export class TableU extends Component {
                             dateStart={item.dateStart}
                             cost={item.cost}
                             country={item.country}
+                            transport={item.transport}
+                            aboutTour={item.aboutTour}
                             imagePath={item.imagePath}
                         />
                     })

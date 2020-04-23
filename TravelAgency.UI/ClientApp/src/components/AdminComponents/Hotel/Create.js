@@ -34,7 +34,7 @@ export class CreateHotel extends React.Component {
     }
 
     validateDescription(description) {
-        return description.length > 2 && description.length <= 70;
+        return description.length > 2 && description.length <= 500;
     }
 
     onChangeDescription(e) {
@@ -109,7 +109,7 @@ export class CreateHotel extends React.Component {
 
             let response = await fetch(url, {
                 method: method,
-                //mode: 'cors',
+                mode: 'cors',
                 body: form,
                 headers: {    
                     'Accept': 'application/json',       
@@ -117,10 +117,10 @@ export class CreateHotel extends React.Component {
             })
 
             if (response.ok) {
-                alert("SUCCESS!!!");
+                alert("Создание успешно!!!");
                 this.props.history.push('/hotelsA');
             } else {
-                alert("Error");
+                alert("Ошибка");
             }            
         }
     }
@@ -165,19 +165,19 @@ export class CreateHotel extends React.Component {
         return (
             <div className="card mb-3">
                 <div className="card-header text-center">
-                    <h2>CREATE HOTEL</h2>
+                    <h2>СОЗДАТЬ НОВЫЙ ОТЕЛЬ</h2>
                 </div>
                 <div className="card-body">
                     <form onSubmit={this.handleSubmit}>
                         <div className="form-group">
-                            <input type="text" placeholder="Hotel" className="form-control" onChange={this.onChangeName} style={{ borderColor: nameColor }} />
+                            <input type="text" placeholder="Имя отеля" className="form-control" onChange={this.onChangeName} style={{ borderColor: nameColor }} />
                         </div>
                         <div className="form-group">
-                            <input type="number" placeholder="Cost" className="form-control" onChange={this.onChangeCost} style={{ borderColor: costColor }} />
+                            <input type="number" placeholder="Цена" className="form-control" onChange={this.onChangeCost} style={{ borderColor: costColor }} />
                         </div>
                         <div className="form-group">
                             <select className="form-control" onChange={this.onChangeTour} style={{ borderColor: tourColor }}>
-                                <option value="0">Select tour</option>
+                                <option value="0">Выбрать тур</option>
                                 {
                                     this.state.tourList.map(tour => {
                                         return <option key={tour.tourId} value={tour.tourId}>{tour.tourName}</option>
@@ -186,10 +186,10 @@ export class CreateHotel extends React.Component {
                             </select>
                         </div>
                         <div className="form-group">
-                            <input type="number" placeholder="Class" className="form-control" onChange={this.onChangeClass} style={{ borderColor: classColor }} />
+                            <input type="number" placeholder="Количество звезд" className="form-control" onChange={this.onChangeClass} style={{ borderColor: classColor }} />
                         </div>
                         <div className="form-group">
-                            <textarea placeholder="Description" onChange={this.onChangeDescription} style={{ borderColor: descriptionColor }} className="form-control" />
+                            <textarea placeholder="Описание" onChange={this.onChangeDescription} style={{ borderColor: descriptionColor }} className="form-control" />
                         </div>
                         <div className="form-group">    
                             <div>  
@@ -197,7 +197,7 @@ export class CreateHotel extends React.Component {
                             </div>    
                         </div> 
 
-                        <input type="submit" value="Save" className="btn btn-success" />
+                        <input type="submit" value="Сохранить" className="btn btn-success" />
                     </form>
                 </div>
             </div>
@@ -209,15 +209,15 @@ export class CreateHotel extends React.Component {
         return (
             <div className="card">
                 <div className="card-header text-center">
-                    <h2>HOTEL</h2>
+                    <h2>ОТЕЛЬ</h2>
                 </div>
                 <div className="card-body text-center">
                     <h3>{this.state.name}</h3>
-                    <p>COST: {this.state.cost}$</p>
-                    <p>CLASS: {this.state.clas}</p>
+                    <p>Цена: {this.state.cost}$</p>
+                    <p>Количество звезд: {this.state.clas}</p>
                     <textarea value={this.state.description} disabled className="form-control"></textarea>
                     <div className="card-body text-center">
-                        <img style={{maxWidth: '100%'}} src={atob(this.state.imagePath)} alt="imagePath"/>
+                        <img style={{maxWidth: '100%'}} src={atob(this.state.imagePath)} alt="ФОТО"/>
                     </div>
                 </div>
             </div>

@@ -62,12 +62,12 @@ export class DeleteTour extends Component {
         return (
             <div className="card mb-3">
                 <div className="card-header text-center">
-                    <h2>DELETE TOUR</h2>
+                    <h2>УДАЛИТЬ ТУР</h2>
                 </div>
                 <div className="card-body">
                     <form onSubmit={this.handleSubmit}>
-                        <h3>Are you sure that you want to delete this tour?</h3>
-                        <input type="submit" className="btn btn-outline-danger" value="DELETE" />
+                        <h3>Вы уверены что хотите удалить данный тур?</h3>
+                        <input type="submit" className="btn btn-outline-danger" value="Удалить" />
                     </form>
                 </div>
             </div>
@@ -80,14 +80,14 @@ export class DeleteTour extends Component {
         return (
             <div className="card">
                 <div className="card-header text-center">
-                    <h2>TOUR</h2>
+                    <h2>ТУР</h2>
                 </div>
                 <div className="card-body text-center">
                     <h3>{this.state.name}</h3>
                     <p>{this.state.cost}$</p>
                     <p>{date.toLocaleDateString()}</p>
                     <p>{this.state.country}</p>
-                    <p>{this.state.duration} days</p>
+                    <p>{this.state.duration} дней</p>
                     <img style={{maxWidth: '100%'}} src={atob(this.state.imagePath)}/>
                 </div>
             </div>

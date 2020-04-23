@@ -41,7 +41,9 @@ namespace TravelAgency.BLL.Services
                     Country = model.Country,
                     DateStart = model.DateStart,
                     Duration = model.Duration,
-                    ImagePath = model.ImagePath
+                    ImagePath = model.ImagePath,
+                    AboutTour = model.AboutTour,
+                    Transport = model.Transport
                 });
         }
 
@@ -72,7 +74,9 @@ namespace TravelAgency.BLL.Services
                 Duration = x.Duration,
                 TourId = x.TourId,
                 TourName = x.TourName,
-                ImagePath = x.ImagePath
+                ImagePath = x.ImagePath,
+                AboutTour = x.AboutTour,
+                Transport = x.Transport
             });
         }
 
@@ -94,7 +98,9 @@ namespace TravelAgency.BLL.Services
                 Duration = tour.Duration,
                 TourId = tour.TourId,
                 TourName = tour.TourName,
-                ImagePath = tour.ImagePath
+                ImagePath = tour.ImagePath,
+                AboutTour = tour.AboutTour,
+                Transport = tour.Transport
             };
         }
 
@@ -128,6 +134,8 @@ namespace TravelAgency.BLL.Services
                 Duration = x.Duration,
                 TourId = x.TourId,
                 TourName = x.TourName,
+                AboutTour = x.AboutTour,
+                Transport = x.Transport,
                 ImagePath = x.ImagePath
             });
         }
@@ -147,6 +155,8 @@ namespace TravelAgency.BLL.Services
             tour.DateStart = model.DateStart;
             tour.Duration = model.Duration;
             tour.ImagePath = model.ImagePath;
+            tour.AboutTour = model.AboutTour;
+            tour.Transport = model.Transport;
             tour.Cost = model.Cost;
 
             return await _unitOfWork.Tours

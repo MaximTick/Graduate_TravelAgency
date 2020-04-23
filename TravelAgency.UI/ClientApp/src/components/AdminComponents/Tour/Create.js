@@ -10,6 +10,8 @@ export class CreateTour extends Component {
             duration: 0, durationIsValid: false,
             cost: 0, costIsValid: false,
             imagePath:[],
+            aboutTour:"", aboutTourIsValid: false,
+            transport:"",  transportIsValid: false,
             dateStart: new Date(), dateStartIsValid: false,
         }
 
@@ -17,6 +19,8 @@ export class CreateTour extends Component {
         this.onChangeCost = this.onChangeCost.bind(this);
         this.onChangeDuration = this.onChangeDuration.bind(this);
         this.onChangeCountry = this.onChangeCountry.bind(this);
+        this.onChangeTransport = this.onChangeTransport.bind(this);
+        this.onChangeAboutTour = this.onChangeAboutTour.bind(this);
         this.onChangeDate = this.onChangeDate.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.setFile = this.setFile.bind(this);
@@ -75,6 +79,27 @@ export class CreateTour extends Component {
     }
 
 
+    validateAboutTour(aboutTour) {
+        return aboutTour.length >= 10 && aboutTour.length <= 2000;
+    }
+
+    onChangeAboutTour(e) {
+        let val = e.target.value;
+        let valid = this.validateAboutTour(val);
+        this.setState({ aboutTour: val, aboutTourIsValid: valid });
+    }
+
+    validateTransport(transport) {
+        return transport.length >= 2 && transport.length <= 30;
+    }
+
+    onChangeTransport(e) {
+        let val = e.target.value;
+        let valid = this.validateTransport(val);
+        this.setState({ transport: val, transportIsValid: valid });
+    }
+
+
     setFile(e) {    
         var render = new FileReader();
         render.readAsDataURL(e.target.files[0]);
@@ -104,6 +129,8 @@ export class CreateTour extends Component {
             form.append('dateStart', this.state.dateStart);
             form.append('cost', this.state.cost);
             form.append('duration', this.state.duration);
+            form.append('aboutTour', this.state.aboutTour);
+            form.append('transport', this.state.transport);
             form.append('imagePath', this.state.imagePath);
 
             let url = "api/v1/tours";
@@ -116,10 +143,10 @@ export class CreateTour extends Component {
             })
 
             if (response.ok) {
-                alert("SUCCESS!!!");
+                alert("Тур создался успешно!!!");
                 this.props.history.push('/toursA');
             } else {
-                alert("Error");
+                alert("ОШИБКА");
             }
         }
     }
@@ -130,35 +157,44 @@ export class CreateTour extends Component {
         let durationColor = this.state.durationIsValid == true ? "green" : "red";
         let dateColor = this.state.dateStartIsValid == true ? "green" : "red";
         let countryColor = this.state.countryIsValid == true ? "green" : "red";
+        let aboutTourColor = this.state.aboutTourIsValid == true ? "green" : "red";
+        let transportColor = this.state.transportIsValid == true ? "green" : "red";
+
 
         return (
             <div className="card mb-3">
                 <div className="card-header text-center">
-                    <h2>CREATE TOUR</h2>
+                    <h2>СОЗДАТЬ ТУР</h2>
                 </div>
                 <div className="card-body">
                     <form onSubmit={this.handleSubmit}>
                         <div className="form-group">
-                            <input type="text" placeholder="Tour" className="form-control" onChange={this.onChangeName} style={{ borderColor: nameColor }} />
+                            <input type="text" placeholder="Название тура" className="form-control" onChange={this.onChangeName} style={{ borderColor: nameColor }} />
                         </div>
                         <div className="form-group">
-                            <input type="number" placeholder="Cost" className="form-control" onChange={this.onChangeCost} style={{ borderColor: costColor }} />
+                            <input type="number" placeholder="Цена" className="form-control" onChange={this.onChangeCost} style={{ borderColor: costColor }} />
                         </div>
                         <div className="form-group">
-                            <input type="number" placeholder="Duration" className="form-control" onChange={this.onChangeDuration} style={{ borderColor: durationColor }} />
+                            <input type="number" placeholder="Продолжительность" className="form-control" onChange={this.onChangeDuration} style={{ borderColor: durationColor }} />
                         </div>
                         <div className="form-group">
-                            <input type="date" placeholder="Date start" className="form-control" onChange={this.onChangeDate} style={{ borderColor: dateColor }} />
+                            <input type="date" placeholder="Дата начала" className="form-control" onChange={this.onChangeDate} style={{ borderColor: dateColor }} />
                         </div>
                         <div className="form-group">
-                            <input type="text" placeholder="Country" className="form-control" onChange={this.onChangeCountry} style={{ borderColor: countryColor }} />
+                            <input type="text" placeholder="Страна" className="form-control" onChange={this.onChangeCountry} style={{ borderColor: countryColor }} />
+                        </div>
+                        <div className="form-group">
+                            <input type="text" placeholder="Транспорт" className="form-control" onChange={this.onChangeTransport} style={{ borderColor: transportColor }} />
+                        </div>
+                        <div className="form-group">
+                            <textarea placeholder="Описание" className="form-control" onChange={this.onChangeAboutTour} style={{ borderColor: aboutTourColor }} />
                         </div>
                         <div className="form-group">    
                             <div>  
                                 <input type="file" name="imagePath" multiple="multiple" onChange={e => this.setFile(e)} />    
                             </div>    
                         </div>
-                        <input type="submit" value="Save" className="btn btn-success" />
+                        <input type="submit" value="Сохранить" className="btn btn-success" />
                     </form>
                 </div>
             </div>
@@ -173,15 +209,15 @@ export class CreateTour extends Component {
         return (
             <div className="card">
                 <div className="card-header text-center">
-                    <h2>TOUR</h2>
+                    <h2>ТУР</h2>
                 </div>
                 <div className="card-body text-center">
                     <h3>{this.state.name}</h3>
                     <p>{this.state.cost}$</p>
                     <p>{date.toLocaleDateString()}</p>
                     <p>{this.state.country}</p>
-                    <p>{this.state.duration} days</p>
-                    <div><img style={{maxWidth: '100%'}} src={atob(this.state.imagePath)} alt="imagePath"/></div>                                                        
+                    <p>{this.state.duration} дней</p>
+                    <div><img style={{maxWidth: '100%'}} src={atob(this.state.imagePath)} alt="Фото"/></div>                                                        
                 </div>
             </div>
         );

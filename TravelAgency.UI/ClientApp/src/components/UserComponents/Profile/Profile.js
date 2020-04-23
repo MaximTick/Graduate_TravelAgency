@@ -49,16 +49,16 @@ export class Profile extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col-md-12 text-center ">
-                        <h2 className="display-4">ORDERS</h2>
+                        <h2 className="display-4">МОИ ЗАКАЗЫ</h2>
                         <hr style={{ borderBottom: "1px solid black" }} />
                     </div>
                     <div className="col-md-12">
                         <table className="table text-center">
                             <thead>
                                 <tr>
-                                    <th>COST</th>
-                                    <th>DATE ORDER</th>
-                                    <th>INFO</th>
+                                    <th>ЦЕНА</th>
+                                    <th>ДАТА ЗАКАЗА</th>
+                                    <th>ДАННЫЕ О БРОНИ</th>
                                 </tr>
                             </thead>
                             <tbody >
@@ -71,7 +71,7 @@ export class Profile extends Component {
                                                 <td>{item.cost}</td>
                                                 <td>{date.toLocaleDateString()}</td>
                                                 <td>
-                                                    <Link className="btn btn-outline-info" to={`/orders/${item.hotelId}`} >INFO</Link>
+                                                    <Link className="btn btn-outline-info" to={`/orders/${item.hotelId}`} >ПОСМОТРЕТЬ БРОНЬ</Link>
                                                 </td>
                                             </tr>
                                         );

@@ -16,19 +16,22 @@ class Item extends Component {
                 </div>
                 <div className="card-body">
                     <div className="row">
-                        <div className="col-md-10">
-                            <p>COST: {this.props.cost}$</p>
-                            <p>CLASS: {this.props.class}</p>
-                            <p>DESCRIPTION: {this.props.description}</p>
+                        <div className="col-lg-9">
+                        <dl className="row">
+                            <dt className="col-sm-3">Цена:</dt>
+                            <dd className="col-sm-9">{this.props.cost}$</dd>
+                            <dt className="col-sm-3">Количество звёзд:</dt>
+                            <dd className="col-sm-9">{this.props.class}<span className="text-warning">★</span></dd>
+                            <dt className="col-sm-3">Описание:</dt>
+                            <dd className="col-sm-9">{this.props.description}</dd>
+                        </dl>
                             <div>
-                            <p>PHOTOS:</p>
-                            <img style={{maxWidth: '100%'}} src={atob(this.props.imagePath)} />
-                            </div>
-                            
+                                <img style={{maxWidth: '100%'}} src={atob(this.props.imagePath)} />
+                            </div>  
                         </div>
-                        <div className="col-md-2 text-center">
-                            <Link className="btn btn-outline-success" to={`/orders/${this.props.id}`}>ORDER</Link>
-                        </div>
+                        <div className="col-lg-3 noPadding text-center">
+                            <Link className="btn btn-outline-success" to={`/orders/${this.props.id}`}>Забронировать </Link>
+                        </div>                       
                     </div>
 
                 </div>
@@ -47,7 +50,7 @@ export class TableU extends Component {
         if (this.props.data.length == 0) {
             return (
                 <div className="text-center">
-                    <h1>THIS TOUR DOESN'T HAVE HOTELS</h1>
+                    <h1>У данного тура нет отеля(:</h1>
                 </div>
             );
         }

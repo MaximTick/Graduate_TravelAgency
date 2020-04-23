@@ -49,46 +49,49 @@ class Item extends Component {
             })
 
             if (response.ok) {
-                alert("SUCCESS!!!");
+                alert("Ставка принята!");
                 window.location.reload();
             } else {
-                alert("You need authorize!");
+                alert("Перед тем как сделать ставку, войдите в свой аккаунт!");
             }
+        }
+        else {
+            alert(`Ваша ставка меньше текущей цены. Увеличте ставку`);
         }
     }
 
     render() {
         let endDate = new Date(this.props.endDate);
 
-        let costColor = this.state.costIsValid == true ? "green" : "gray";
+        let costColor = this.state.costIsValid == true ? "green" : "red";
 
         return (
             <div className="card shadow m-2">
                 <div className="card-body">
                     <div className="row">
                         <div className="col-md-10">
-                            <p><b>RESERVER PRICE: </b>{this.props.reservePrice}</p>
-                            <p><b>CURRENT PRICE: </b>{this.props.currentPrice}</p>
-                            <p><b>END DATE: </b>{endDate.toLocaleString()}</p>
+                            <p><b>Зарезервированная цена: </b>{this.props.reservePrice}</p>
+                            <p><b>Текущая цена: </b>{this.props.currentPrice}</p>
+                            <p><b>Действует до: </b>{endDate.toLocaleString()}</p>
                         </div>
                         <div className="col-md-2">
-                            <Link className="btn btn-outline-info m-1" to={`/infoAuction/${this.props.tourId}`}>INFO</Link>
-                            <input type="button" className="btn btn-primary m-1" value="BUY" onClick={this.modalCost} />
+                            <Link className="btn btn-outline-info m-1" to={`/infoAuction/${this.props.tourId}`}>Подробно</Link>
+                            <input type="button" className="btn btn-primary m-1" value="Ставка" onClick={this.modalCost} />
                         </div>
                     </div>
                 </div>
 
                 <Modal isOpen={this.state.modalCost} >
                     <ModalHeader toggle={this.modalCost} >
-                        COST
+                        Введите цену
                         </ModalHeader>
                     <ModalBody>
                         <form >                          
                             <div className="form-group">
-                                <input type="number" placeholder="Cost" className="form-control" onChange={this.onChangeCost} style={{ borderColor: costColor }} />
+                                <input type="number" placeholder="Цена" className="form-control" onChange={this.onChangeCost} style={{ borderColor: costColor }} />
                             </div>
 
-                            <input type="button" value="Buy" onClick={this.handleSubmit} className="btn btn-success" />
+                            <input type="button" value="Повысить ставку" onClick={this.handleSubmit} className="btn btn-success" />
                         </form>
                     </ModalBody>
                 </Modal>

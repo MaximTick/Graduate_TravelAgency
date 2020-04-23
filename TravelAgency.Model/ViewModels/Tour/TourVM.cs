@@ -10,6 +10,9 @@ namespace TravelAgency.Model.ViewModels.Tour
         public int Duration { get; set; }
         public int Cost { get; set; }
         public string ImagePath { get; set; }
+
+        public string AboutTour { get; set; }
+        public string Transport { get; set; }
         public DateTime DateStart { get; set; }
     }
 }

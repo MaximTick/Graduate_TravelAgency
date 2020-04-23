@@ -23,7 +23,7 @@ export class DeleteAuction extends Component {
         });
 
         if (response.ok) {
-            alert('Success!!!');
+            alert('УСПЕШНО!!!');
             this.props.history.push('/auctionsA');
         }
     }
@@ -60,10 +60,8 @@ export class DeleteAuction extends Component {
                             <p><b>CURRENT PRICE: </b>{this.state.auction.currentBiddingPrice}</p>
                             <p><b>END DATE: </b>{endDate.toLocaleDateString()}</p>
                             <p><b>UPLOADED DATE: </b>{uploadedDate.toLocaleDateString()}</p>
-                        </div>
-                        <div className="col-md-2">
-                            <input type="button" className="btn btn-outline-danger" onClick={this.handleSubmit} value="DELETE" />
-                        </div>
+                        </div>                       
+                            <input type="button" className="btn btn-outline-danger" onClick={this.handleSubmit} value="Удалить" />
                     </div>
                 </div>
             </div>
@@ -75,7 +73,7 @@ export class DeleteAuction extends Component {
             <div>
                 <div className="row">
                     <div className="col-md-6">
-                        <h2 className="display-4">ARE YOU SURE THAT YOU WANT TO DELETE THIS AUCTION?</h2>
+                        <h3 className="display-4">Вы действительно хотите удалить данный аукцион?</h3>
                     </div>
                     <div className="col-md-6">
                         {

@@ -14,7 +14,9 @@ namespace TravelAgency.Model.ViewModels.Order
         public string Country { get; set; }
         public int Duration { get; set; }
         public string ImagePathT { get; set; }
-        public string ImagePathH { get; set; }
+        public string ImagePath { get; set; }
+        public string Transport { get; set; }
+        public string AboutTour { get; set; }
         public DateTime DateStart { get; set; }
         /////////////////////////////////////////
         public int TotalCost { get; set; }

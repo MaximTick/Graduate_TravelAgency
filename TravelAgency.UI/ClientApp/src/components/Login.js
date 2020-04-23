@@ -112,23 +112,23 @@ export class Login extends Component {
         return (
             <div className="card shadow bg-white rounded">
                 <div className="card-header text-center">
-                    <h2>Already registered?</h2>
+                    <h2>Уже зарегистрированы?</h2>
                 </div>
                 <div className="card-body">
                     <form onSubmit={this.handleSubmit}>
                         <div className="form-group">
                             <label for="Email"><b>EMAIL</b></label>
-                            <input type="text" id="Email" placeholder="EMAIL" onChange={this.onChangeEmail} className="form-control" style={{ borderColor: emailColor, borderWidth: 3 }} />
+                            <input type="text" id="Email" placeholder="Email" onChange={this.onChangeEmail} className="form-control" style={{ borderColor: emailColor, borderWidth: 3 }} />
                         </div>
                         <div className="form-group">
-                            <label for="Password"><b>PASSWORD</b></label>
-                            <input type="password" id="Password" placeholder="PASSWORD" onChange={this.onChangePassword} className="form-control" style={{ borderColor: passwordColor, borderWidth: 3 }} />
+                            <label for="Password"><b>ПАРОЛЬ</b></label>
+                            <input type="password" id="Password" placeholder="Пароль" onChange={this.onChangePassword} className="form-control" style={{ borderColor: passwordColor, borderWidth: 3 }} />
                         </div>
                         <div className="form-group">
                             <input type="checkbox" id="Remember" />
-                            <label className="ml-1" for="Remember"><b>Remember Me?</b></label>
+                            <label className="ml-1" for="Remember"><b>Запомнить меня?</b></label>
                         </div>
-                        <input type="submit" value="SIGN IN" className="btn btn-outline-dark" />
+                        <input type="submit" value="ВОЙТИ" className="btn btn-outline-dark" />
                     </form>
                 </div>
             </div>
@@ -143,24 +143,24 @@ export class Login extends Component {
                         {this.renderForm()}
                     </div>
                     <div className="col-md-6 text-center">
-                        <h1 className="display-4">TRAVEL AGENCY</h1>
-                        <p style={{ fontSize: "20px" }}>THIS IS THE BEST COMPANY! LET'S GO WITH US.</p>
+                        <h1 className="display-4">Тур агентство TRAVELA</h1>
+                        <p style={{ fontSize: "20px" }}>Благодаря Вам мы становимся лучше! Спасибо что выбрали именно нас!</p>
                     </div>
                 </div>
 
                 <div>
                     <Modal isOpen={this.state.modalError} >
                         <ModalHeader toggle={this.modalError} >
-                            Incorrect login or password
+                            Неправильный логин или пароль
                         </ModalHeader>
                         <ModalBody>
-                            <p><b>Email example:</b> qwerty@gmail.com</p>
-                            <p><b>Password:</b> The length of the Password must not be less than 6 characters.</p>
+                            <p><b>пример Email:</b> qwerty@gmail.com</p>
+                            <p><b>Пароль:</b>Длинаа не менее 6 символов.</p>
                         </ModalBody>
                     </Modal>
                     <Modal isOpen={this.state.modalSignIn} >
                         <ModalHeader toggle={this.modalSignIn} >
-                            Sign In Error
+                            Ошибка при входе
                         </ModalHeader>
                         <ModalBody>
                             <ul>

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using TravelAgency.BLL.Intrefaces;
 using TravelAgency.Model.ViewModels.Order;
@@ -8,6 +9,7 @@ using TravelAgency.UI.Contracts;
 namespace TravelAgency.UI.Controllers
 {
     [ApiController]
+    [Authorize]
     public class OrderController : ControllerBase
     {
         private readonly IOrderService _orderService;

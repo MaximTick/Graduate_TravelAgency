@@ -197,19 +197,19 @@ export class TourHotel extends Component {
         }
 
         return (
-            <div className="container">
-                <div className="row">
+            <div className="container-fluid">
+                <div className="row justify-content-center">
                     <div className="col-md-8">
                         <div className="jumbotron">
-                            <h1 className="display-4">Hello, these are HOTELS</h1>
-                            <p className="lead">Here you can see hotels! Choose something and let's go with us to travel.</p>
+                            <h1 className="display-4 text-center">TRAVELA приветствует Вас</h1>
+                            <p className="lead text-center">Здесь вы можете выбрать отель! Выберите отель и вперед в путешествие.</p>
                         </div>
                         <div className="">
                             <nav aria-label="breadcrumb">
                                 <ol className="breadcrumb">
-                                    <Link className="breadcrumb-item" to={`/`}>Home</Link>
-                                    <Link className="breadcrumb-item" to={`/toursU`}>Tours</Link>
-                                    <li className="breadcrumb-item active" aria-current="page">Hotels</li>
+                                    <Link className="breadcrumb-item" to={`/`}>Главная</Link>
+                                    <Link className="breadcrumb-item" to={`/toursU`}>Туры</Link>
+                                    <li className="breadcrumb-item active" aria-current="page">Отели</li>
                                 </ol>
                             </nav>
                         </div>

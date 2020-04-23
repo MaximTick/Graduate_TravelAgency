@@ -60,7 +60,7 @@ export class Order extends Component {
         })
 
         if (response.ok) {
-            alert("SUCCESS!!!");
+            alert("Операция прошла успешно!!!");
             this.props.history.push('/hotelsU');
         } else {
             this.props.history.push('/login');
@@ -130,9 +130,9 @@ export class Order extends Component {
                     <div className="col-md-12">
                         <nav aria-label="breadcrumb">
                             <ol className="breadcrumb">
-                                <Link className="breadcrumb-item" to={`/`}>Home</Link>
-                                <Link className="breadcrumb-item" to={`/hotelsU`}>Hotels</Link>
-                                <li className="breadcrumb-item active" aria-current="page">Order</li>
+                                <Link className="breadcrumb-item" to={`/`}>Главная</Link>
+                                <Link className="breadcrumb-item" to={`/hotelsU`}>Отели</Link>
+                                <li className="breadcrumb-item active" aria-current="page">Забронировать</li>
                             </ol>
                         </nav>
                     </div>
@@ -140,7 +140,7 @@ export class Order extends Component {
                 <div className="row">
                     <div className="col-md-12">
                         <div className="alert alert-info">
-                            <span style={{ fontSize: "30px" }}><b>PRICE:</b> {this.state.order.totalCost}$</span>
+                            <span style={{ fontSize: "30px" }}><b>ЦЕНА:</b> {this.state.order.totalCost}$</span>
 
                         </div>
                     </div>
@@ -155,10 +155,11 @@ export class Order extends Component {
                             <div className="card-body">
                                 <div className="row">
                                     <div className="col-md-10" style={{ fontSize: "22px" }}>
-                                        <p><b>DATE START:</b> {date.toLocaleDateString()}</p>
-                                        <p><b>COUNTRY:</b> {this.state.order.country}</p>
-                                        <p><b>DURATION:</b> {this.state.order.duration} days</p>
-                                        <img style={{maxWidth: '100%'}} src={(this.state.order.imagePathH)} alt="imagePathH"/>
+                                        <p><b>ДАТА ОТПРАВЛЕНИЯ:</b> {date.toLocaleDateString()}</p>                                       
+                                        <p><b>СРОК:</b> {this.state.order.duration} дней</p>
+                                        <p><b>СТРАНА:</b> {this.state.order.country}</p>
+                                        <p><b>ТРАНСПОРТ:</b> {this.state.order.trasport}</p>
+                                        <p><b>ОПИСАНИЕ ТУРА:</b> {this.state.order.aboutTour}</p>
                                     </div>
                                 </div>
                             </div>
@@ -172,8 +173,8 @@ export class Order extends Component {
                             <div className="card-body">
                                 <div className="row">
                                     <div className="col-md-10" style={{ fontSize: "22px" }}>
-                                        <p><b>CLASS:</b> {this.state.order.class}<span className="text-warning">★</span></p>
-                                        <p><b>DESCRIPTION:</b> {this.state.order.description}</p>
+                                        <p><b>КОЛИЧЕСТВО ЗВЁЗД:</b> {this.state.order.class}<span className="text-warning">★</span></p>
+                                        <p><b>ОПИСАНИЕ:</b>{this.state.order.description}</p>
                                     </div>
                                 </div>
                             </div>
@@ -183,7 +184,7 @@ export class Order extends Component {
                 <div className="row">
                     <div className="col-md-12">
                         <div className="alert alert-success">
-                            <input type="button" className="btn btn-success" value="ORDER" onClick={this.modalOrder} />
+                            <input type="button" className="btn btn-success" value="Забронировать" onClick={this.modalOrder} />
                         </div>
                     </div>
                 </div>
@@ -191,12 +192,12 @@ export class Order extends Component {
                 <div className="row mb-5">
                     <div className="col-md-12">
                         <div className="text-center">
-                            <h1 className="display-4">COMMENTS</h1>
+                            <h1 className="display-4">КОММЕНТАРИИ</h1>
                             <hr style={{ borderBottom: "1px solid black" }} />
                         </div>
                         <div className="card">
                             <div className="card-header">
-                                <input type="button" className="btn btn-primary" value="ADD COMMENT" onClick={this.modalMessage} />
+                                <input type="button" className="btn btn-primary" value="Добавить комментарий" onClick={this.modalMessage} />
                             </div>
                             <div className="card-body">
                                 {
@@ -220,24 +221,24 @@ export class Order extends Component {
                 </div>
                 <Modal isOpen={this.state.modalOrder} >
                     <ModalHeader toggle={this.modalOrder} >
-                        ORDER
+                        Бронирование
                         </ModalHeader>
                     <ModalBody>
-                        <p>ARE YOU SURE THAT YOU WANT TO ORDER THIS TOUR?</p>
-                        <button className="btn btn-outline-primary" onClick={this.handleSubmit}>ORDER</button>
+                        <p>Подтвердите нажатием на "Забронировать"?</p>
+                        <button className="btn btn-outline-primary" onClick={this.handleSubmit}>Забронировать</button>
                     </ModalBody>
                 </Modal>
 
                 <Modal isOpen={this.state.modalMessage} >
                     <ModalHeader toggle={this.modalMessage} >
-                        COMMENT
+                        Добавление комментария
                         </ModalHeader>
                     <ModalBody>
-                        <input type="text" placeholder="Message" onChange={this.onChangeMessage} className="form-control" value={this.state.message} />
-                        <small>Length message must be not less than 3 charecters</small>
+                        <input type="text" placeholder="Сообщение" onChange={this.onChangeMessage} className="form-control" value={this.state.message} />
+                        <small>Комментарий должен содержать не менее 3 символов</small>
                         <br />
                         <br />
-                        <button className="btn btn-outline-primary" onClick={this.handleSendMessage}>SEND</button>
+                        <button className="btn btn-outline-primary" onClick={this.handleSendMessage}>Отпрравить</button>
                     </ModalBody>
                 </Modal>
             </div>

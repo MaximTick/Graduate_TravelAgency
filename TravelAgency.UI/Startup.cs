@@ -36,6 +36,11 @@ namespace TravelAgency.UI
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("RequireAdministratorRole", policy => policy.RequireRole("admin"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

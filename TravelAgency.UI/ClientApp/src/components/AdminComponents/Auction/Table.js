@@ -15,14 +15,14 @@ class Item extends Component {
                 <div className="card-body">
                     <div className="row">
                         <div className="col-md-10">
-                            <p><b>RESERVER PRICE: </b>{this.props.reservePrice}</p>
-                            <p><b>CURRENT PRICE: </b>{this.props.currentBiddingPrice}</p>
-                            <p><b>END DATE: </b>{endDate.toLocaleString()}</p>
-                            <p><b>UPLOADED DATE: </b>{uploadedDate.toLocaleDateString()}</p>
-                            <p><b>AUCTION STATUS: </b>{this.props.auctionStatus}</p>
+                            <p><b>Зарезервированная цена: </b>{this.props.reservePrice}</p>
+                            <p><b>Текущая цена: </b>{this.props.currentBiddingPrice}</p>
+                            <p><b>Дествителен до: </b>{endDate.toLocaleString()}</p>
+                            <p><b>Дата начала: </b>{uploadedDate.toLocaleDateString()}</p>
+                            <p><b>Статус: </b>{this.props.auctionStatus}</p>
                         </div>
                         <div className="col-md-2">
-                            <Link className="btn btn-outline-danger" to={`/deleteAuction/${this.props.id}`}>DELETE</Link>
+                            <Link className="btn btn-outline-danger" to={`/deleteAuction/${this.props.id}`}>Удалить</Link>
                         </div>
                     </div>
                 </div>
@@ -40,7 +40,7 @@ export class Table extends Component {
     render() {
         return (
             <div className="">
-                <Link className="btn btn-success" to={`/createAuction`}>CREATE</Link>
+                <Link className="btn btn-success" to={`/createAuction`}>Создать</Link>
 
                 <div>
                     {

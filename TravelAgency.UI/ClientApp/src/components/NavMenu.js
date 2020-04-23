@@ -90,19 +90,19 @@ export class NavMenu extends Component {
                         <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
                             <ul className="navbar-nav flex-grow">
                                 <NavItem>
-                                    <NavLink tag={Link} className="text-dark" to="/hotelsA">HOTELS</NavLink>
+                                    <NavLink tag={Link} className="text-dark" to="/hotelsA">ОТЕЛИ</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink tag={Link} className="text-dark" to="/toursA">TOURS</NavLink>
+                                    <NavLink tag={Link} className="text-dark" to="/toursA">ТУРЫ</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink tag={Link} className="text-dark" to="/comments">COMMENTS</NavLink>
+                                    <NavLink tag={Link} className="text-dark" to="/comments">КОММЕНТАРИИ</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink tag={Link} className="text-dark" to="/auctionsA">AUCTIONS</NavLink>
+                                    <NavLink tag={Link} className="text-dark" to="/auctionsA">АУКЦИОНЫ</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="text-dark" style={{ cursor: "pointer" }} onClick={this.modalSignOut}>LOGOUT</NavLink>
+                                    <NavLink className="text-dark" style={{ cursor: "pointer" }} onClick={this.modalSignOut}>ВЫЙТИ</NavLink>
                                 </NavItem>
                             </ul>
                         </Collapse>
@@ -119,19 +119,19 @@ export class NavMenu extends Component {
                         <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
                             <ul className="navbar-nav flex-grow">
                                 <NavItem>
-                                    <NavLink tag={Link} className="text-dark" to="/hotelsU">HOTELS</NavLink>
+                                    <NavLink tag={Link} className="text-dark" to="/hotelsU">ОТЕЛИ</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink tag={Link} className="text-dark" to="/toursU">TOURS</NavLink>
+                                    <NavLink tag={Link} className="text-dark" to="/toursU">ТУРЫ</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink tag={Link} className="text-dark" to="/auctionsU">AUCTIONS</NavLink>
+                                    <NavLink tag={Link} className="text-dark" to="/auctionsU">АУКЦИОНЫ</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink tag={Link} className="text-dark" to="/profile">PROFILE</NavLink>
+                                    <NavLink tag={Link} className="text-dark" to="/profile">ПРОФИЛЬ</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="text-dark" style={{ cursor: "pointer" }} onClick={this.modalSignOut}>LOGOUT</NavLink>
+                                    <NavLink className="text-dark" style={{ cursor: "pointer" }} onClick={this.modalSignOut}>ВЫЙТИ</NavLink>
                                 </NavItem>
                             </ul>
                         </Collapse>
@@ -148,16 +148,16 @@ export class NavMenu extends Component {
                         <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
                             <ul className="navbar-nav flex-grow">
                                 <NavItem>
-                                    <NavLink tag={Link} className="text-dark" to="/hotelsU">HOTELS</NavLink>
+                                    <NavLink tag={Link} className="text-dark" to="/hotelsU">ОТЕЛИ</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink tag={Link} className="text-dark" to="/toursU">TOURS</NavLink>
+                                    <NavLink tag={Link} className="text-dark" to="/toursU">ТУРЫ</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink tag={Link} className="text-dark" to="/login">SIGN IN</NavLink>
+                                    <NavLink tag={Link} className="text-dark" to="/login">ВОЙТИ</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink tag={Link} className="text-dark" to="/register">SIGN UP</NavLink>
+                                    <NavLink tag={Link} className="text-dark" to="/register">ЗАРЕГИСТРИРОВАТЬСЯ</NavLink>
                                 </NavItem>
                             </ul>
                         </Collapse>
@@ -176,11 +176,11 @@ export class NavMenu extends Component {
                 <div>
                     <Modal isOpen={this.state.modalSignOut} >
                         <ModalHeader toggle={this.modalSignOut} >
-                            Sign Out
+                            Выход
                         </ModalHeader>
                         <ModalBody>
-                            <p>Are you sure you want to log out?</p>
-                            <button className="btn btn-outline-danger" onClick={this.signOut}>Log Out</button>
+                            <p>Вы уверены что хотите выйти?</p>
+                            <button className="btn btn-outline-danger" onClick={this.signOut}>Выйти</button>
                         </ModalBody>
                     </Modal>
                 </div>

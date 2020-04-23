@@ -3,6 +3,9 @@ import { Pagination } from './SharedComponents/Pagination';
 import { Search } from './SharedComponents/Search';
 import { TableU } from './UserComponents/Hotel/Table';
 import { Link } from 'react-router-dom';
+import Sticky from 'react-sticky-state';
+
+
 
 class Item extends Component {
     constructor(props) {
@@ -18,9 +21,9 @@ class Item extends Component {
                     <h4>{date.toLocaleString()}</h4>
                 </div>
                 <div className="m-4">
-                    <p><b>RESERVE PRICE: </b>{this.props.reservePrice}</p>
-                    <p><b>CURRENT PRICE: </b>{this.props.currentPrice}</p>
-                    <Link className="btn btn-block btn-outline-dark" to={`/auctionsU`}>AUCTIONS</Link>
+                    <p><b>Зарезервированная цена: </b>{this.props.reservePrice}</p>
+                    <p><b>Текущая цена: </b>{this.props.currentPrice}</p>
+                    <Link className="btn btn-block btn-outline-dark" to={`/auctionsU`}>Аукцион</Link>
                 </div>
             </div>
         );
@@ -188,18 +191,18 @@ export class HotelU extends Component {
 
     render() {
         return (
-            <div className="container">
-                <div className="row">
+            <div className="container-fluid">
+                <div className="row justify-content-center">
                     <div className="col-md-8">
                         <div className="jumbotron">
-                            <h1 className="display-4">Hello, these are HOTELS</h1>
-                            <p className="lead">Here you can see hotels! Choose something and let's go with us to travel.</p>
+                            <h1 className="display-4 text-center">TRAVELA приветствует Вас</h1>
+                            <p className="lead text-center">Здесь вы можете выбрать отель! Выберите отель и вперед в путешествие!!!</p>
                         </div>
                         <div className="">
                             <nav aria-label="breadcrumb">
                                 <ol className="breadcrumb">
-                                    <Link className="breadcrumb-item" to={`/`}>Home</Link>
-                                    <li className="breadcrumb-item active" aria-current="page">Hotels</li>
+                                    <Link className="breadcrumb-item" to={`/`}>Главаня</Link>
+                                    <li className="breadcrumb-item active" aria-current="page">Отели</li>
                                 </ol>
                             </nav>
                         </div>
@@ -221,10 +224,11 @@ export class HotelU extends Component {
                             />
                         </div>
                     </div>
+                    <Sticky>
                     <div className="col-md-4">
-                        <div className="card">
+                        <div className="card" style={{position: "sticky", top: 20}}>
                             <div className="card-header text-center">
-                                <h2>AUCTION</h2>
+                                <h2>Аукционы</h2>
                             </div>
                             <div className="card-body">
                                 {
@@ -241,6 +245,7 @@ export class HotelU extends Component {
                             </div>
                         </div>
                     </div>
+                    </Sticky>
                 </div>
             </div>
         );

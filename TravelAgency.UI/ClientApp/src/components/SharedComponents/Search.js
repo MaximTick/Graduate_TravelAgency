@@ -15,7 +15,7 @@ export class Search extends Component {
 
     render() {
         return (
-            <input placeholder="Search" className="form-control" onChange={this.onTextChanged} />
+            <input placeholder="Поиск" className="form-control" onChange={this.onTextChanged} />
         );
     }
 }

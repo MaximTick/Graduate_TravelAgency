@@ -12,5 +12,6 @@ namespace TravelAgency.Model.ViewModels.Auction
         public DateTime EndDate { get; set; }
         public int AuctionStatus { get; set; }
         public int TourId { get; set; }
+        public string UserId { get; set; }
     }
 }

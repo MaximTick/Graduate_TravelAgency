@@ -181,18 +181,18 @@ export class TourU extends Component {
 
     render() {
         return (
-            <div className="container">
-                <div className="row">
+            <div className="container-fluid">
+                <div className="row justify-content-center">
                     <div className="col-md-8">
                         <div className="jumbotron">
-                            <h1 className="display-4">Hello, these are TOURS</h1>
-                            <p className="lead">Here you can see tours! Choose something and let's go with us to travel.</p>
+                            <h1 className="display-4 text-center">TRAVELA приветствует Вас</h1>
+                            <p className="lead text-center">Здесь вы можете выбрать тур! Выберите тур и вперед в путешествие!</p>
                         </div>
                         <div className="">
                             <nav aria-label="breadcrumb">
                                 <ol className="breadcrumb">
-                                    <Link className="breadcrumb-item" to={`/`}>Home</Link>
-                                    <li className="breadcrumb-item active" aria-current="page">Tours</li>
+                                    <Link className="breadcrumb-item" to={`/`}>Главная</Link>
+                                    <li className="breadcrumb-item active" aria-current="page">Туры</li>
                                 </ol>
                             </nav>
                         </div>
@@ -214,20 +214,7 @@ export class TourU extends Component {
                             />
                         </div>
                     </div>
-                    <div className="col-md-4">
-                        <div className="card">
-                            <div className="card-header text-center">
-                                <h2>AUCTION</h2>
-                            </div>
-                            <div className="card-body">
-                                {
-                                    //this.state.listTest.map(function (item) {
-                                    //    return <Item key={item.testId} id={item.testId} name={item.name} level={item.level} />
-                                    //})
-                                }
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         );

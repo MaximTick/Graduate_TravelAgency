@@ -31,7 +31,10 @@ namespace TravelAgency.DAL.Entities
 
         [Required]
         public int TourId { get; set; }
+       // public string UserId { get; set; }
         public virtual Tour Tour { get; set; }
+       // public virtual User User { get; set; }
+
 
     }
 }

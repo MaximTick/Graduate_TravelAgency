@@ -122,7 +122,8 @@ export class Register extends Component {
         return (
             <div className="card shadow bg-white rounded">
                 <div className="card-header text-center">
-                    <h2>Registration</h2>
+                    <meta charset="utf-8"/>
+                    <h2>Зарегистрироваться</h2>
                 </div>
                 <div className="card-body">
                     <form onSubmit={this.handleSubmit}>
@@ -131,14 +132,14 @@ export class Register extends Component {
                             <input type="text" id="Email" placeholder="EMAIL" onChange={this.onChangeEmail} className="form-control" style={{ borderColor: emailColor, borderWidth: 3 }} />
                         </div>
                         <div className="form-group">
-                            <label for="Password"><b>PASSWORD</b></label>
+                            <label for="Password"><b>ПАРОЛЬ</b></label>
                             <input type="password" id="Password" placeholder="PASSWORD" onChange={this.onChangePassword} className="form-control" style={{ borderColor: passwordColor, borderWidth: 3 }} />
                         </div>
                         <div className="form-group">
-                            <label for="ConfirmPassword"><b>CONFIRM PASSWORD</b></label>
+                            <label for="ConfirmPassword"><b>ПОДТВЕРДИТЕ ПАРОЛЬ</b></label>
                             <input type="password" id="ConfirmPassword" placeholder="CONFIRM PASSWORD" onChange={this.onChangeConfimPassword} className="form-control" style={{ borderColor: confirmPasswordColor, borderWidth: 3 }} />
                         </div>
-                        <input type="submit" value="SIGN UP" className="btn btn-outline-dark" />
+                        <input type="submit" value="Продолжить" className="btn btn-outline-dark" />
                     </form>
                 </div>
             </div>
@@ -153,15 +154,15 @@ export class Register extends Component {
                         {this.renderForm()}
                     </div>
                     <div className="col-md-6 text-center">
-                        <h1 className="display-4">TRAVEL AGENCY</h1>
-                        <p style={{ fontSize: "20px" }}>THIS IS THE BEST COMPANY! LET'S GO WITH US.</p>
+                        <h1 className="display-4">Тур агентство TRAVELA</h1>
+                        <p style={{ fontSize: "20px" }}>Зашли к нам впервые? Пройдите моментальную регистрацию</p>
                     </div>                  
                 </div>
 
                 <div>
                     <Modal isOpen={this.state.modalRegister} >
                         <ModalHeader toggle={this.modalRegister} >
-                            Incorrect login or password
+                            Неправильно введен пароль или логин
                         </ModalHeader>
                         <ModalBody>
                             <ul>
@@ -179,8 +180,8 @@ export class Register extends Component {
                             Sign In Error
                         </ModalHeader>
                         <ModalBody>
-                            <p><b>Email example:</b> qwerty@gmail.com</p>
-                            <p><b>Password:</b> The length of the Password must not be less than 6 characters.</p>
+                            <p><b>Пример Email:</b> qwerty@gmail.com</p>
+                            <p><b>Пароль:</b>Длина пароля должна быть не менее 6 символов</p>
                         </ModalBody>
                     </Modal>
                 </div>

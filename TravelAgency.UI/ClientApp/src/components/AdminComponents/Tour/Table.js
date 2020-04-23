@@ -11,10 +11,10 @@ class Item extends Component {
             <tr>
                 <td><b>{this.props.name}</b></td>
                 <td>
-                    <Link className="btn btn-warning" to={`/updateTour/${this.props.id}`}>UPDATE</Link>
+                    <Link className="btn btn-warning" to={`/updateTour/${this.props.id}`}>ИЗМЕНИТь</Link>
                 </td>
                 <td>
-                    <Link className="btn btn-danger" to={`/deleteTour/${this.props.id}`}>DELETE</Link>
+                    <Link className="btn btn-danger" to={`/deleteTour/${this.props.id}`}>УДАЛИТЬ</Link>
                 </td>
             </tr>
         );
@@ -30,14 +30,14 @@ export class Table extends Component {
     render() {
         return (
             <div className="text-center">
-                <Link className="btn btn-success btn-block mb-3" to="/createTour">CREATE</Link>
+                <Link className="btn btn-success btn-block mb-3" to="/createTour">СОЗДАТЬ</Link>
 
                 <table className="table">
                     <thead>
                         <tr>
-                            <th>TOUR</th>
-                            <th>UPDATE</th>
-                            <th>DELETE</th>
+                            <th>ТУР</th>
+                            <th>ИЗМЕНИТь</th>
+                            <th>УДАЛИТЬ</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -49,9 +49,9 @@ export class Table extends Component {
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th>TOUR</th>
-                            <th>UPDATE</th>
-                            <th>DELETE</th>
+                            <th>ТУР</th>
+                            <th>ИЗМЕНИТь</th>
+                            <th>УДАЛИТЬ</th>
                         </tr>
                     </tfoot>
                 </table>

@@ -43,8 +43,8 @@ export class AuctionU extends Component {
                     <div className="col-md-12">
                         <nav aria-label="breadcrumb">
                             <ol className="breadcrumb">
-                                <Link className="breadcrumb-item" to={`/`}>Home</Link>
-                                <li className="breadcrumb-item active" aria-current="page">Auctons</li>
+                                <Link className="breadcrumb-item" to={`/`}>Главная</Link>
+                                <li className="breadcrumb-item active" aria-current="page">Аукционы</li>
                             </ol>
                         </nav>
                     </div>
@@ -56,10 +56,10 @@ export class AuctionU extends Component {
                     <div className="col-md-4">
                         <div className="card m-2">
                             <div className="card-header text-center">
-                                <h1>AUCTIONS</h1>
+                                <h1>Аукционы</h1>
                             </div>
                             <div className="card-body text-center">
-                                <p style={{ fontSize: "22px" }}>These are auctions!</p>
+                                <p style={{ fontSize: "22px" }}>Играют они - выигрываете Вы!</p>
                             </div>
                         </div>
                     </div>

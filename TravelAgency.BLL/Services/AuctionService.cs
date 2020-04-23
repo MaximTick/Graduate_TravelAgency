@@ -47,6 +47,7 @@ namespace TravelAgency.BLL.Services
                 ReservePrice = model.ReservePrice,
                 EndDate = model.EndDate,
                 TourId = model.TourId,
+               // UserId = model.UserId,
                 UploadedDate = DateTime.Now
             });
         }
@@ -82,6 +83,7 @@ namespace TravelAgency.BLL.Services
                 EndDate = auction.EndDate,
                 UploadedDate = auction.UploadedDate,
                 ReservePrice = auction.ReservePrice,
+               // UserId = auction.UserId,
                 TourId = auction.TourId
             };
         }
@@ -98,6 +100,7 @@ namespace TravelAgency.BLL.Services
                    EndDate = x.EndDate,
                    ReservePrice = x.ReservePrice,
                    TourId = x.TourId,
+                   //UserId = x.UserId,
                    UploadedDate = x.UploadedDate
                }).OrderByDescending(x => x.AuctionId)
                  .Take(3);
@@ -115,6 +118,7 @@ namespace TravelAgency.BLL.Services
                     EndDate = x.EndDate,
                     ReservePrice = x.ReservePrice,
                     TourId = x.TourId,
+                   // UserId = x.UserId,
                     UploadedDate = x.UploadedDate
                 });
         }

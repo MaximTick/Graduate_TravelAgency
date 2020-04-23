@@ -38,9 +38,9 @@ export class AuctionInfo extends Component {
                     <div className="col-md-12">
                         <nav aria-label="breadcrumb">
                             <ol className="breadcrumb">
-                                <Link className="breadcrumb-item" to={`/`}>Home</Link>
-                                <Link className="breadcrumb-item" to={`/auctionsU`}>Auctions</Link>
-                                <li className="breadcrumb-item active" aria-current="page">Auction Info</li>
+                                <Link className="breadcrumb-item" to={`/`}>Главная</Link>
+                                <Link className="breadcrumb-item" to={`/auctionsU`}>Аукционы</Link>
+                                <li className="breadcrumb-item active" aria-current="page">Аукцион</li>
                             </ol>
                         </nav>
                     </div>
@@ -54,10 +54,9 @@ export class AuctionInfo extends Component {
                             <div className="card-body">
                                 <div className="row">
                                     <div className="col-md-10" style={{ fontSize: "22px" }}>
-                                        <p><b>DATE START:</b> {date.toLocaleDateString()}</p>
-                                        <p><b>COUNTRY:</b> {this.state.order.country}</p>
-                                        <p><b>DURATION:</b> {this.state.order.duration} days</p>
-                                        <img style={{maxWidth: '100%'}} src={(this.state.order.imagePathT)} alt="imagePathT"/>
+                                        <p><b>Дата начала:</b> {date.toLocaleDateString()}</p>
+                                        <p><b>Страна:</b> {this.state.order.country}</p>
+                                        <p><b>Продолжительность:</b> {this.state.order.duration} дней</p>
                                     </div>
                                 </div>
                             </div>
@@ -71,8 +70,8 @@ export class AuctionInfo extends Component {
                             <div className="card-body">
                                 <div className="row">
                                     <div className="col-md-10" style={{ fontSize: "22px" }}>
-                                        <p><b>CLASS:</b> {this.state.order.class}<span className="text-warning">★</span></p>
-                                        <p><b>DESCRIPTION:</b> {this.state.order.description}</p>
+                                        <p><b>Количество звезд:</b> {this.state.order.class}<span className="text-warning">★</span></p>
+                                        <p><b>Описание:</b> {this.state.order.description}</p>
                                     </div>
                                 </div>
                             </div>

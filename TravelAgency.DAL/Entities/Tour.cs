@@ -31,6 +31,12 @@ namespace TravelAgency.DAL.Entities
         public int Cost { get; set; }
         public string ImagePath { get; set; }
 
+        [StringLength(2000)]
+        public string AboutTour { get; set; }
+
+        [StringLength(30)]
+        public string Transport { get; set; }
+
         [Required]
         public DateTime DateStart { get; set; }
 

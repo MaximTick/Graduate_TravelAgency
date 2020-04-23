@@ -59,12 +59,12 @@ export class DeleteHotel extends Component {
         return (
             <div className="card mb-3">
                 <div className="card-header text-center">
-                    <h2>DELETE HOTEL</h2>
+                    <h2>УДАЛИТЬ ОТЕЛЬ</h2>
                 </div>
                 <div className="card-body">
                     <form onSubmit={this.handleSubmit}>
-                        <h3>Are you sure that you want to delete this hotel?</h3>
-                        <input type="submit" className="btn btn-outline-danger" value="DELETE" />
+                        <h3>Вы уверены что хотите удалить данный отель?</h3>
+                        <input type="submit" className="btn btn-outline-danger" value="Удалить" />
                     </form>
                 </div>
             </div>

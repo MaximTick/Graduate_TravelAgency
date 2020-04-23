@@ -39,9 +39,9 @@ class Item extends Component {
         });
 
         if (response.ok) {
-            alert('Success!!!');
+            alert('УСПЕХ!!!');
         } else {
-            alert("Error");
+            alert("Ошибка");
         }
     }
 
@@ -50,10 +50,10 @@ class Item extends Component {
             <tr>
                 <td><b>{this.props.name}</b></td>
                 <td>
-                    <input type="button" value="ACCESS" className="btn btn-outline-warning" onClick={this.updateComment} />
+                    <input type="button" value="Принять" className="btn btn-outline-warning" onClick={this.updateComment} />
                 </td>
                 <td>
-                    <input type="button" value="DELETE" className="btn btn-outline-danger" onClick={this.deleteComment} />
+                    <input type="button" value="Удалить" className="btn btn-outline-danger" onClick={this.deleteComment} />
                 </td>
             </tr>
         );
@@ -72,9 +72,9 @@ export class Table extends Component {
                 <table className="table">
                     <thead>
                         <tr>
-                            <th>MESSAGE</th>
-                            <th>UPDATE</th>
-                            <th>DELETE</th>
+                            <th>СООБЩЕНИЕ</th>
+                            <th>ПОДТВЕРДИТЬ</th>
+                            <th>УДАЛИТЬ</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -86,9 +86,9 @@ export class Table extends Component {
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th>MESSAGE</th>
-                            <th>UPDATE</th>
-                            <th>DELETE</th>
+                            <th>СООБЩЕНИЕ</th>
+                            <th>ПОДТВЕРДИТЬ</th>
+                            <th>УДАЛИТЬ</th>
                         </tr>
                     </tfoot>
                 </table>

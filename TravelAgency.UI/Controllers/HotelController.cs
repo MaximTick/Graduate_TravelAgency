@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using TravelAgency.BLL.Intrefaces;
 using TravelAgency.Model.ViewModels.Hotel;
@@ -7,6 +8,7 @@ using TravelAgency.UI.Contracts;
 namespace TravelAgency.UI.Controllers
 {
     [ApiController]
+    //[AutoValidateAntiforgeryToken]
     public class HotelController : ControllerBase
     {
         private readonly IHotelService _hotelService;
@@ -43,6 +45,7 @@ namespace TravelAgency.UI.Controllers
         }
 
         [HttpPost(RoutesApi.Hotel.Create)]
+        //[Authorize(Roles = "admin")]
         public async Task<IActionResult> Create([FromForm]HotelVM model)
         {
             if (ModelState.IsValid)

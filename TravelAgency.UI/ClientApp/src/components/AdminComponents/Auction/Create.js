@@ -69,7 +69,7 @@ export class CreateAuction extends Component {
             })
 
             if (response.ok) {
-                alert("SUCCESS!!!");
+                alert("УСПЕШНО!!!");
                 this.props.history.push('/auctionsA');
             } else {
                 alert("Error");
@@ -100,19 +100,19 @@ export class CreateAuction extends Component {
         return (
             <div className="card mb-3">
                 <div className="card-header text-center">
-                    <h2>CREATE AUCTION</h2>
+                    <h2>СОЗДАТЬ АУКЦИОН</h2>
                 </div>
                 <div className="card-body">
                     <form onSubmit={this.handleSubmit}>
                         <div className="form-group">
-                            <input type="number" className="form-control" placeholder="RESERVE PRICE" onChange={this.onChangeReservePrice} style={{ borderColor: reservePriceColor }} />
+                            <input type="number" className="form-control" placeholder="Зарезервированная цена" onChange={this.onChangeReservePrice} style={{ borderColor: reservePriceColor }} />
                         </div>
                         <div className="form-group">
-                            <input type="datetime-local" className="form-control" placeholder="END DATE" onChange={this.onChangeDate} style={{ borderColor: dateColor }} />
+                            <input type="datetime-local" className="form-control" placeholder="Действует до" onChange={this.onChangeDate} style={{ borderColor: dateColor }} />
                         </div>
                         <div className="form-group">
                             <select className="form-control" onChange={this.onChangeTour} style={{ borderColor: tourColor }}>
-                                <option value="0">Select tour</option>
+                                <option value="0">Выбрать тур</option>
                                 {
                                     this.state.tourList.map(tour => {
                                         return <option key={tour.tourId} value={tour.tourId}>{tour.tourName}</option>
@@ -120,7 +120,7 @@ export class CreateAuction extends Component {
                                 }
                             </select>
                         </div>
-                        <input type="submit" value="Save" className="btn btn-success" />
+                        <input type="submit" value="Сохранить" className="btn btn-success" />
                     </form>
                 </div>
             </div>
@@ -133,11 +133,11 @@ export class CreateAuction extends Component {
         return (
             <div className="card">
                 <div className="card-header text-center">
-                    <h2>AUCTION</h2>
+                    <h2>АУКЦИОН</h2>
                 </div>
                 <div className="card-body text-center">
-                    <p>COST: {this.state.reservePrice}$</p>
-                    <p>END DATE: {date.toLocaleDateString()}</p>
+                    <p>ЦЕНА: {this.state.reservePrice}$</p>
+                    <p>ДЕЙСТВУЕТ ДО: {date.toLocaleDateString()}</p>
                 </div>
             </div>
         );
