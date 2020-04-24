@@ -7,7 +7,7 @@ export class DeleteTour extends Component {
         this.state = {
             tourId: 0,
             name: "",
-            country: "",
+            countryFrom: "",
             duration: 0,
             cost: 0,
             dateStart: new Date(),
@@ -48,7 +48,7 @@ export class DeleteTour extends Component {
                 duration: results.duration,
                 dateStart: results.dateStart,
                 cost: results.cost,
-                country: results.country,
+                countryFrom: results.countryFrom,
                 imagePath: results.imagePath
             }))
         }
@@ -86,7 +86,7 @@ export class DeleteTour extends Component {
                     <h3>{this.state.name}</h3>
                     <p>{this.state.cost}$</p>
                     <p>{date.toLocaleDateString()}</p>
-                    <p>{this.state.country}</p>
+                    <p>{this.state.countryFrom}</p>
                     <p>{this.state.duration} дней</p>
                     <img style={{maxWidth: '100%'}} src={atob(this.state.imagePath)}/>
                 </div>

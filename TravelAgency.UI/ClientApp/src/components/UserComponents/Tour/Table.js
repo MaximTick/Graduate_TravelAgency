@@ -23,8 +23,10 @@ class Item extends Component {
                             <dd className="col-sm-9">{this.props.cost}$</dd>
                             <dt className="col-sm-3">Дата отаправления:</dt>
                             <dd className="col-sm-9">{date.toLocaleDateString()}</dd>
+                            <dt className="col-sm-3">Продолжительность:</dt>
+                            <dd className="col-sm-9">{this.props.duration} дней</dd>
                             <dt className="col-sm-3">Страна:</dt>
-                            <dd className="col-sm-9">{this.props.country}</dd>
+                            <dd className="col-sm-9">{this.props.countryFrom}</dd>
                             <dt className="col-sm-3">Транспорт:</dt>
                             <dd className="col-sm-9">{this.props.transport}</dd>
                             <dt className="col-sm-3">Описание тура:</dt>
@@ -35,7 +37,7 @@ class Item extends Component {
                         </div>
                     </div>
                     <div className="col-md-2 text-center">
-                            <Link className="btn btn-outline-warning" to={`/hotelsTour/${this.props.id}`}>Просмотр отелей</Link>
+                            <Link className="btn btn-outline-warning" to={`/hotelsTour/${this.props.id}`}>Выбрать отель</Link>
                     </div>
                  </div>                               
                 </div>
@@ -62,7 +64,7 @@ export class TableU extends Component {
                             duration={item.duration}
                             dateStart={item.dateStart}
                             cost={item.cost}
-                            country={item.country}
+                            countryFrom={item.countryFrom}
                             transport={item.transport}
                             aboutTour={item.aboutTour}
                             imagePath={item.imagePath}

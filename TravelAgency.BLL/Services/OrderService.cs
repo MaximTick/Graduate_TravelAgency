@@ -36,13 +36,20 @@ namespace TravelAgency.BLL.Services
 
         public async Task<bool> Create(OrderVM order, UserVM user)
         {
-            return await _orderRepository.Create(new Orderr()
+            var fHotel = await _unitOfWork.Hotels.GetById(order.HotelId);
+            var fTour = await _unitOfWork.Tours.GetById(fHotel.TourId);
+            if (fHotel != null && fHotel.HotelSize > 0) fHotel.HotelSize--;
+            else return false;
+            await _unitOfWork.Hotels.Update(fHotel);
+            var fOrder= await _orderRepository.Create(new Orderr()
             {
                 Cost = order.Cost,
                 DateOrder = DateTime.Now,
                 HotelId = order.HotelId,
-                UserId = user.UserId
+                UserId = user.UserId,
             });
+             new EmailService().SendAsyncEmail(user.Email, "TRAVELA", $"Вы успешно забронировали тур в отеле {fHotel.HotelName} на {fTour.DateStart}");
+            return fOrder;
         }
 
         public IEnumerable<OrderVM> GetOrderByUser(UserVM user)
@@ -66,17 +73,18 @@ namespace TravelAgency.BLL.Services
             Tour tour = await _unitOfWork.Tours
                 .GetById(hotel.TourId);
 
-            return new OrderInfoVM()    
+            return new OrderInfoVM()
             {
                 Class = hotel.Class,
                 TourId = tour.TourId,
-                Country = tour.Country,
+                CountryFrom = tour.CountryFrom,
                 DateStart = tour.DateStart,
                 Description = hotel.Description,
                 Duration = tour.Duration,
                 HotelId = hotel.HotelId,
                 HotelName = hotel.HotelName,
                 TotalCost = hotel.Cost + tour.Cost,
+                HotelSize = hotel.HotelSize,
                 TourName = tour.TourName,
                 Transport = tour.Transport,
                 AboutTour = tour.AboutTour,

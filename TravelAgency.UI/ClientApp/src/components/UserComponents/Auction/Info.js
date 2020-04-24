@@ -55,7 +55,7 @@ export class AuctionInfo extends Component {
                                 <div className="row">
                                     <div className="col-md-10" style={{ fontSize: "22px" }}>
                                         <p><b>Дата начала:</b> {date.toLocaleDateString()}</p>
-                                        <p><b>Страна:</b> {this.state.order.country}</p>
+                                        <p><b>Страна:</b> {this.state.order.countryFrom}</p>
                                         <p><b>Продолжительность:</b> {this.state.order.duration} дней</p>
                                     </div>
                                 </div>

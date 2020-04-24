@@ -17,5 +17,6 @@ namespace TravelAgency.Model.ViewModels.Hotel
         //public IList<IFormFile> Image { get; set; }
        // public IFormFile ImagePath { get; set; }
        public string ImagePath { get; set; }
+       public int HotelSize { get; set; }
     }
 }

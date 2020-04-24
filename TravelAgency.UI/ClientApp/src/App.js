@@ -23,6 +23,7 @@ import { AuctionU } from './components/Auction';
 import { AuctionInfo } from './components/UserComponents/Auction/Info';
 import { CreateAuction } from './components/AdminComponents/Auction/Create';
 import { DeleteAuction } from './components/AdminComponents/Auction/Delete';
+import { ShowOrder } from './components/UserComponents/Order/ShowOrder';
 
 
 export default class App extends Component {
@@ -39,6 +40,7 @@ export default class App extends Component {
                 <Route path='/toursA' component={TourA} />
                 <Route path='/hotelsTour/:id' component={TourHotel} />
                 <Route path='/toursU' component={TourU} />
+                <Route path='/toursB' component={TourU} />
                 <Route path='/createTour' component={CreateTour} />
                 <Route path='/updateTour/:id' component={UpdateTour} />
                 <Route path='/deleteTour/:id' component={DeleteTour} />
@@ -58,6 +60,7 @@ export default class App extends Component {
                 <Route path='/deleteAuction/:id' component={DeleteAuction} />
 
                 <Route path='/orders/:id' component={Order} />
+                <Route path='/showOrders/:id' component={ShowOrder} />
             </Layout>
         );
     }

@@ -11,6 +11,7 @@ export class CreateHotel extends React.Component {
             tourId: 0, tourIsValid: false,
             cost: 0, costIsValid: false,
             clas: 0, classIsValid: false,
+            hotelSize: 0, sizeIsValid: false,
             tourList: [],
             imagePath: []
         }
@@ -20,6 +21,7 @@ export class CreateHotel extends React.Component {
         this.onChangeTour = this.onChangeTour.bind(this);
         this.onChangeDescription = this.onChangeDescription.bind(this);
         this.onChangeClass = this.onChangeClass.bind(this);
+        this.onchangeHotelSize = this.onchangeHotelSize.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -51,6 +53,16 @@ export class CreateHotel extends React.Component {
         let val = e.target.value;
         let valid = this.validateCost(val);
         this.setState({ cost: val, costIsValid: valid });
+    }
+
+    validateHotelSize(hotelSize) {
+        return hotelSize > 0 && hotelSize <= 2000;
+    }
+
+    onchangeHotelSize(e) {
+        let val = e.target.value;
+        let valid = this.validateHotelSize(val);
+        this.setState({ hotelSize: val, sizeIsValid: valid });
     }
 
     validateTour(tour) {
@@ -92,7 +104,7 @@ export class CreateHotel extends React.Component {
 
         if (this.state.nameIsValid == true && this.state.costIsValid == true &&
             this.state.descriptionIsValid == true && this.state.tourIsValid == true &&
-            this.state.classIsValid == true) {
+            this.state.classIsValid == true, this.state.sizeIsValid) {
 
              console.log(this.state.imagePath);
 
@@ -103,6 +115,7 @@ export class CreateHotel extends React.Component {
             form.append('description', this.state.description);
             form.append('class', this.state.clas);
             form.append('imagePath', this.state.imagePath);
+            form.append('hotelSize', this.state.hotelSize);
             debugger;
             let url = "api/v1/hotels";
             let method = 'POST';
@@ -160,6 +173,7 @@ export class CreateHotel extends React.Component {
         let descriptionColor = this.state.descriptionIsValid == true ? "green" : "red";
         let tourColor = this.state.tourIsValid == true ? "green" : "red";
         let classColor = this.state.classIsValid == true ? "green" : "red";
+        let sizeColor = this.state.sizeIsValid == true ? "green" : "red";
 
 
         return (
@@ -187,6 +201,9 @@ export class CreateHotel extends React.Component {
                         </div>
                         <div className="form-group">
                             <input type="number" placeholder="Количество звезд" className="form-control" onChange={this.onChangeClass} style={{ borderColor: classColor }} />
+                        </div>
+                        <div className="form-group">
+                            <input type="number" placeholder="Количество мест в отеле" className="form-control" onChange={this.onchangeHotelSize} style={{ borderColor: sizeColor }} />
                         </div>
                         <div className="form-group">
                             <textarea placeholder="Описание" onChange={this.onChangeDescription} style={{ borderColor: descriptionColor }} className="form-control" />

@@ -223,7 +223,7 @@ export class TourHotel extends Component {
                             contentPagination
                         }
                     </div>
-                    <div className="col-md-4">
+                    {/* <div className="col-md-4">
                         <div className="card">
                             <div className="card-header text-center">
                                 <h2>AUCTION</h2>
@@ -236,7 +236,7 @@ export class TourHotel extends Component {
                                 }
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         );

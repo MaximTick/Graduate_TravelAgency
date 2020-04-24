@@ -5,7 +5,7 @@ import {
 
 import { Link } from 'react-router-dom';
 
-export class Order extends Component {
+export class ShowOrder extends Component {
     constructor(props, context) {
         super(props, context);
 
@@ -48,7 +48,6 @@ export class Order extends Component {
     async handleSubmit() {
         let form = new FormData();
         form.append('cost', this.state.order.totalCost);
-        form.append('hotelSize', this.state.order.hotelSize);
         form.append('hotelId', this.state.order.hotelId);
 
         let url = "api/v1/orders";
@@ -64,8 +63,7 @@ export class Order extends Component {
             alert("Операция прошла успешно!!!");
             this.props.history.push('/hotelsU');
         } else {
-            alert(`Нет свободных мест`);
-            //this.props.history.push('/login');
+            this.props.history.push('/login');
         }
     }
 
@@ -125,11 +123,7 @@ export class Order extends Component {
 
     render() {
         let date = new Date(this.state.order.dateStart);
-        var IsFull;
-        if(this.state.order.hotelSize>0)
-            IsFull="есть";
-        else
-            IsFull="нет";
+
         return (
             <div className="container">
                 <div className="row">
@@ -161,7 +155,7 @@ export class Order extends Component {
                             <div className="card-body">
                                 <div className="row">
                                     <div className="col-md-10" style={{ fontSize: "22px" }}>
-                                        <p><b>ДАТА ОТПРАВЛЕНИЯ:</b> {date.toLocaleDateString()}</p>                                       
+                                        <p><b>ДАТА ОТПРАВЛЕНИЯ:</b> {date.toLocaleDateString()}</p>
                                         <p><b>СРОК:</b> {this.state.order.duration} дней</p>
                                         <p><b>СТРАНА:</b> {this.state.order.countryFrom}</p>
                                         <p><b>ТРАНСПОРТ:</b> {this.state.order.trasport}</p>
@@ -181,24 +175,13 @@ export class Order extends Component {
                                     <div className="col-md-10" style={{ fontSize: "22px" }}>
                                         <p><b>КОЛИЧЕСТВО ЗВЁЗД:</b> {this.state.order.class}<span className="text-warning">★</span></p>
                                         <p><b>ОПИСАНИЕ:</b>{this.state.order.description}</p>
-                                        <p><b>СВОБОДНЫЕ МЕСТА: </b>{IsFull}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-md-12">
-                        <div className="alert alert-success">
-                            {
-                                this.state.order.hotelSize>0
-                                ?<input type="button" className="btn btn-success" value="Забронировать" onClick={this.modalOrder} />
-                                :<input type="button" disabled className="btn btn-success" value="Забронировать" onClick={this.modalOrder} />
-                            }
-                        </div>
-                    </div>
-                </div>
+     
 
                 <div className="row mb-5">
                     <div className="col-md-12">
@@ -230,15 +213,7 @@ export class Order extends Component {
                         </div>
                     </div>
                 </div>
-                <Modal isOpen={this.state.modalOrder} >
-                    <ModalHeader toggle={this.modalOrder} >
-                        Бронирование
-                        </ModalHeader>
-                    <ModalBody>
-                        <p>Подтвердите нажатием на "Забронировать"?</p>
-                        <button className="btn btn-outline-primary" onClick={this.handleSubmit}>Забронировать</button>
-                    </ModalBody>
-                </Modal>
+
 
                 <Modal isOpen={this.state.modalMessage} >
                     <ModalHeader toggle={this.modalMessage} >

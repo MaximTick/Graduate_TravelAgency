@@ -68,6 +68,7 @@ namespace TravelAgency.BLL.Services
                        Description = model.Description,
                        HotelName = model.HotelName,
                        ImagePath = model.ImagePath, //imageData
+                       HotelSize = model.HotelSize,
                        TourId = model.TourId
                    });
         }
@@ -99,7 +100,9 @@ namespace TravelAgency.BLL.Services
                 Description = x.Description,
                 HotelName = x.HotelName,
                 TourId = x.TourId,
-                ImagePath=x.ImagePath
+                ImagePath=x.ImagePath,
+                HotelSize =x.HotelSize
+                
             });
         }
 
@@ -121,7 +124,8 @@ namespace TravelAgency.BLL.Services
                 Description = hotel.Description,
                 HotelName = hotel.HotelName,
                 TourId = hotel.TourId,
-                ImagePath = hotel.ImagePath
+                ImagePath = hotel.ImagePath,
+                HotelSize = hotel.HotelSize
             };
         }
         public class HotelVMDownload {
@@ -148,8 +152,9 @@ namespace TravelAgency.BLL.Services
                 Description = x.Description,
                 HotelName = x.HotelName,
                 TourId = x.TourId,
-                ImagePath = x.ImagePath
-            });
+                ImagePath = x.ImagePath,
+                HotelSize = x.HotelSize
+        });
         }
 
         public async Task<bool> Update(HotelVM model)
@@ -168,6 +173,7 @@ namespace TravelAgency.BLL.Services
             hotel.HotelName = model.HotelName;
             hotel.TourId = model.TourId;
             hotel.ImagePath = model.ImagePath;
+            hotel.HotelSize = model.HotelSize;
 
             return await _unitOfWork.Hotels
                 .Update(hotel);

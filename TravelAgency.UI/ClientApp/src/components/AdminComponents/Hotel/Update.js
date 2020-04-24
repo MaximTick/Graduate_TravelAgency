@@ -11,6 +11,7 @@ export class UpdateHotel extends Component {
             tourId: 0, tourIsValid: true,
             cost: 0, costIsValid: true,
             clas: 0, classIsValid: true,
+            hotelSize: 0, sizeIsValid: true,
             tourList: [],
             imagePath:[]
         }
@@ -20,6 +21,7 @@ export class UpdateHotel extends Component {
         this.onChangeTour = this.onChangeTour.bind(this);
         this.onChangeDescription = this.onChangeDescription.bind(this);
         this.onChangeClass = this.onChangeClass.bind(this);
+        this.onchangeHotelSize = this.onchangeHotelSize.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -51,6 +53,16 @@ export class UpdateHotel extends Component {
         let val = e.target.value;
         let valid = this.validateCost(val);
         this.setState({ cost: val, costIsValid: valid });
+    }
+
+    validateHotelSize(hotelSize) {
+        return hotelSize > 0 && hotelSize <= 2000;
+    }
+
+    onchangeHotelSize(e) {
+        let val = e.target.value;
+        let valid = this.validateHotelSize(val);
+        this.setState({ hotelSize: val, sizeIsValid: valid });
     }
 
     validateTour(tour) {
@@ -89,7 +101,7 @@ export class UpdateHotel extends Component {
 
         if (this.state.nameIsValid == true && this.state.costIsValid == true &&
             this.state.descriptionIsValid == true && this.state.tourIsValid == true &&
-            this.state.classIsValid == true) {
+            this.state.classIsValid == true, this.state.sizeIsValid == true) {
 
             let form = new FormData();
             form.append('hotelId', this.state.hotelId);
@@ -99,6 +111,7 @@ export class UpdateHotel extends Component {
             form.append('description', this.state.description);
             form.append('class', this.state.clas);
             form.append('imagePath', this.state.imagePath);
+            form.append('hotelSize', this.state.hotelSize);
 
             let url = "api/v1/hotels";
             let method = 'PUT';
@@ -110,10 +123,10 @@ export class UpdateHotel extends Component {
             })
 
             if (response.ok) {
-                alert("SUCCESS!!!");
+                alert("Обновление данных прошло успешно!!!");
                 this.props.history.push('/hotelsA');
             } else {
-                alert("Error");
+                alert("Произошла ошибка при обновлении данных");
             }
         }
     }
@@ -143,6 +156,7 @@ export class UpdateHotel extends Component {
                     clas: results.class,
                     description: results.description,
                     tourId: results.tourId,
+                    hotelSize: results.hotelSize,
                     imagePath: results.imagePath
                 })
             });
@@ -162,7 +176,7 @@ export class UpdateHotel extends Component {
         let descriptionColor = this.state.descriptionIsValid == true ? "green" : "red";
         let tourColor = this.state.tourIsValid == true ? "green" : "red";
         let classColor = this.state.classIsValid == true ? "green" : "red";
-
+        let sizeColor = this.state.sizeIsValid == true ? "green" : "red";
 
         return (
             <div className="card mb-3">
@@ -189,6 +203,9 @@ export class UpdateHotel extends Component {
                         </div>
                         <div className="form-group">
                             <input type="number" value={this.state.clas} placeholder="Звезды" className="form-control" onChange={this.onChangeClass} style={{ borderColor: classColor }} />
+                        </div>
+                        <div className="form-group">
+                            <input type="number" placeholder="Количество мест в отеле" value={this.state.hotelSize} className="form-control" onChange={this.onchangeHotelSize} style={{ borderColor: sizeColor }} />
                         </div>
                         <div className="form-group">
                             <textarea placeholder="Description" value={this.state.description} onChange={this.onChangeDescription} style={{ borderColor: descriptionColor }} className="form-control" />

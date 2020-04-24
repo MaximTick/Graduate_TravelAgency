@@ -27,7 +27,9 @@ namespace TravelAgency.DAL.Entities
         [Required]
         [StringLength(500)]
         public string Description { get; set; }
-
+        [Required]
+        [Range(1, 2000)]
+        public int HotelSize { get; set; }
         //public byte[] ImagePath { get; set; }
         public string ImagePath { get; set; }
 

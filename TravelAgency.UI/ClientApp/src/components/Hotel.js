@@ -224,7 +224,6 @@ export class HotelU extends Component {
                             />
                         </div>
                     </div>
-                    <Sticky>
                     <div className="col-md-4">
                         <div className="card" style={{position: "sticky", top: 20}}>
                             <div className="card-header text-center">
@@ -244,8 +243,7 @@ export class HotelU extends Component {
                                 }
                             </div>
                         </div>
-                    </div>
-                    </Sticky>
+                    </div> 
                 </div>
             </div>
         );
