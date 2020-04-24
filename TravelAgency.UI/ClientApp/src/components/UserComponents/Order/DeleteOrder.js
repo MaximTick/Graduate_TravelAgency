@@ -1,11 +1,11 @@
-﻿import React, { Component } from 'react';
+import React, { Component } from 'react';
 import {
     Modal, ModalHeader, ModalBody
 } from 'reactstrap';
 
 import { Link } from 'react-router-dom';
 
-export class Order extends Component {
+export class DeleteOrder extends Component {
     constructor(props, context) {
         super(props, context);
 
@@ -20,7 +20,6 @@ export class Order extends Component {
         this.modalOrder = this.modalOrder.bind(this);
         this.modalMessage = this.modalMessage.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleSendMessage = this.handleSendMessage.bind(this);
     }
 
     validateMessage(message) {
@@ -46,56 +45,27 @@ export class Order extends Component {
     }
 
     async handleSubmit() {
-        let form = new FormData();
-        form.append('cost', this.state.order.totalCost);
-        form.append('hotelSize', this.state.order.hotelSize);
-        form.append('hotelId', this.state.order.hotelId);
-
-        let url = "api/v1/orders";
-        let method = 'POST';
+        let url = "api/v1/orders/"  + this.props.match.params.id;
+        let method = 'DELETE';
 
         let response = await fetch(url, {
             method: method,
-            mode: 'cors',
-            body: form
+            mode: 'cors'
         })
 
         if (response.ok) {
             alert("Операция прошла успешно!!!");
             this.props.history.push('/hotelsU');
         } else {
-            alert(`Нет свободных мест`);
+            alert(`Не удалось отменить бронь. Попробуйте повторить операцию`);
             //this.props.history.push('/login');
         }
     }
 
-    async handleSendMessage() {
-        if (this.state.messageIsValid == true) {
-            let form = new FormData();
-            form.append('message', this.state.message);
-            form.append('tourId', this.state.order.tourId);
-
-            let url = "api/v1/comments";
-            let method = 'POST';
-
-            let response = await fetch(url, {
-                method: method,
-                mode: 'cors',
-                body: form
-            })
-
-            if (response.ok) {
-                alert("Message sent!");
-            } else {
-                this.props.history.push('/login');
-            }
-        }
-
-    }
 
     async loadData() {
-        let url = "api/v1/ordersInfo/" + this.props.match.params.id;
-        let urlComments = "api/v1/comments/" + this.props.match.params.id;
+       
+        let url = "api/v1/ordersInfo/" +  this.props.match.params.id;
 
         let response = await fetch(url);
 
@@ -105,16 +75,6 @@ export class Order extends Component {
             responseJson.then(results => {
                 this.setState({ order: results })
             });
-        }
-
-        let responseComment = await fetch(urlComments);
-
-        if (responseComment.ok) {
-            let responseJson = responseComment.json();
-
-            responseJson.then(results => {
-                this.setState({ comments: results.result });
-            })
         }
     }
 
@@ -192,67 +152,22 @@ export class Order extends Component {
                 <div className="row">
                     <div className="col-md-12">
                         <div className="alert alert-success">
-                            {
-                                this.state.order.hotelSize > 0
-                                ?<input type="button" className="btn btn-success" value="Забронировать" onClick={this.modalOrder} />
-                                :<input type="button" disabled className="btn btn-success" value="Забронировать" onClick={this.modalOrder} />
-                            }
+                                <input type="button" className="btn btn-success" value="Отменить бронь" onClick={this.modalOrder} />
                         </div>
                     </div>
                 </div>
 
-                <div className="row mb-5">
-                    <div className="col-md-12">
-                        <div className="text-center">
-                            <h1 className="display-4">КОММЕНТАРИИ</h1>
-                            <hr style={{ borderBottom: "1px solid black" }} />
-                        </div>
-                        <div className="card">
-                            <div className="card-header">
-                                <input type="button" className="btn btn-primary" value="Добавить комментарий" onClick={this.modalMessage} />
-                            </div>
-                            <div className="card-body">
-                                {
-                                    this.state.comments.map(function (item) {
-                                        let date = new Date(item.dateMessage);
 
-                                        return (
-                                            <div key={item.commentId} className="card mb-2">
-                                                <div className="card-body">
-                                                    <h4>{item.email}</h4>
-                                                    <p>{item.message}</p>
-                                                    <small style={{ color: "gray" }}>{date.toLocaleDateString()}</small>
-                                                </div>
-                                            </div>
-                                        )
-                                    })
-                                }
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <Modal isOpen={this.state.modalOrder} >
                     <ModalHeader toggle={this.modalOrder} >
-                        Бронирование
+                        Отмена бронирования
                         </ModalHeader>
                     <ModalBody>
-                        <p>Подтвердите нажатием на "Забронировать"?</p>
-                        <button className="btn btn-outline-primary" onClick={this.handleSubmit}>Забронировать</button>
+                        <p>Подтвердите нажатием на "Отменить бронь"</p>
+                        <button className="btn btn-outline-primary" onClick={this.handleSubmit}>Отменить бронь</button>
                     </ModalBody>
                 </Modal>
 
-                <Modal isOpen={this.state.modalMessage} >
-                    <ModalHeader toggle={this.modalMessage} >
-                        Добавление комментария
-                        </ModalHeader>
-                    <ModalBody>
-                        <input type="text" placeholder="Сообщение" onChange={this.onChangeMessage} className="form-control" value={this.state.message} />
-                        <small>Комментарий должен содержать не менее 3 символов</small>
-                        <br />
-                        <br />
-                        <button className="btn btn-outline-primary" onClick={this.handleSendMessage}>Отпрравить</button>
-                    </ModalBody>
-                </Modal>
             </div>
         );
     }

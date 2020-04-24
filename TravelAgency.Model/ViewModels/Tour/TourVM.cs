@@ -7,6 +7,7 @@ namespace TravelAgency.Model.ViewModels.Tour
         public int TourId { get; set; }
         public string TourName { get; set; }
         public string CountryFrom { get; set; }
+        public string CountryTo { get; set; }
         public int Duration { get; set; }
         public int Cost { get; set; }
         public string ImagePath { get; set; }

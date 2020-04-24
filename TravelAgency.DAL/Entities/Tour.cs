@@ -24,6 +24,8 @@ namespace TravelAgency.DAL.Entities
         [StringLength(70)]
         public string CountryFrom { get; set; }
 
+        public string CountryTo { get; set; }
+
         [Required]
         public int Duration { get; set; }
 

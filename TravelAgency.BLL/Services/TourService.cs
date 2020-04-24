@@ -39,6 +39,7 @@ namespace TravelAgency.BLL.Services
                     TourName = model.TourName,
                     Cost = model.Cost,
                     CountryFrom = model.CountryFrom,
+                    CountryTo = model.CountryTo,
                     DateStart = model.DateStart,
                     Duration = model.Duration,
                     ImagePath = model.ImagePath,
@@ -70,6 +71,7 @@ namespace TravelAgency.BLL.Services
             {
                 Cost = x.Cost,
                 CountryFrom = x.CountryFrom,
+                CountryTo = x.CountryTo,
                 DateStart = x.DateStart,
                 Duration = x.Duration,
                 TourId = x.TourId,
@@ -94,6 +96,7 @@ namespace TravelAgency.BLL.Services
             {
                 Cost = tour.Cost,
                 CountryFrom = tour.CountryFrom,
+                CountryTo = tour.CountryTo,
                 DateStart = tour.DateStart,
                 Duration = tour.Duration,
                 TourId = tour.TourId,
@@ -130,6 +133,7 @@ namespace TravelAgency.BLL.Services
             {
                 Cost = x.Cost,
                 CountryFrom = x.CountryFrom,
+                CountryTo = x.CountryTo,
                 DateStart = x.DateStart,
                 Duration = x.Duration,
                 TourId = x.TourId,
@@ -152,6 +156,7 @@ namespace TravelAgency.BLL.Services
 
             tour.TourName = model.TourName;
             tour.CountryFrom = model.CountryFrom;
+            tour.CountryTo = model.CountryTo;
             tour.DateStart = model.DateStart;
             tour.Duration = model.Duration;
             tour.ImagePath = model.ImagePath;

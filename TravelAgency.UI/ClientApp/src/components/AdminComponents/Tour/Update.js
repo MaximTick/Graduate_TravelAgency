@@ -8,6 +8,7 @@ export class UpdateTour extends Component {
             tourId: 0,
             name: "", nameIsValid: true,
             countryFrom: "", countryFromIsValid: true,
+            countryTo: "", countryToIsValid: true,
             duration: 0, durationIsValid: true,
             cost: 0, costIsValid: true,
             imagePath:[],
@@ -20,6 +21,7 @@ export class UpdateTour extends Component {
         this.onChangeCost = this.onChangeCost.bind(this);
         this.onChangeDuration = this.onChangeDuration.bind(this);
         this.onChangecountryFrom = this.onChangecountryFrom.bind(this);
+        this.onChangecountryTo = this.onChangecountryTo.bind(this);
         this.onChangeTransport = this.onChangeTransport.bind(this);
         this.onChangeAboutTour = this.onChangeAboutTour.bind(this);
         this.onChangeDate = this.onChangeDate.bind(this);
@@ -44,6 +46,16 @@ export class UpdateTour extends Component {
         let val = e.target.value;
         let valid = this.validatecountryFrom(val);
         this.setState({ countryFrom: val, countryFromIsValid: valid });
+    }
+
+    validatecountryTo(countryTo) {
+        return countryTo.length > 2 && countryTo.length <= 70;
+    }
+
+    onChangecountryTo(e) {
+        let val = e.target.value;
+        let valid = this.validatecountryTo(val);
+        this.setState({ countryTo: val, countryToIsValid: valid });
     }
 
     validateDuration(duration) {
@@ -114,12 +126,14 @@ export class UpdateTour extends Component {
 
         if (this.state.nameIsValid == true && this.state.costIsValid == true &&
             this.state.durationIsValid == true && this.state.dateStartIsValid == true &&
-            this.state.countryFromIsValid == true, this.state.transportIsValid == true, this.state.aboutTourIsValid == true) {
+            this.state.countryFromIsValid == true, this.state.transportIsValid == true, 
+            this.state.countryToIsValid == true, this.state.aboutTourIsValid == true) {
 
             let form = new FormData();
             form.append('tourId', this.state.tourId);
             form.append('tourName', this.state.name);
             form.append('countryFrom', this.state.countryFrom);
+            form.append('countryTo', this.state.countryTo);
             form.append('dateStart', this.state.dateStart);
             form.append('cost', this.state.cost);
             form.append('duration', this.state.duration);
@@ -160,6 +174,7 @@ export class UpdateTour extends Component {
                 dateStart: results.dateStart,
                 cost: results.cost,
                 countryFrom: results.countryFrom,
+                countryTo: results.countryTo,
                 transport: results.transport,
                 aboutTour: results.aboutTour,
                 imagePath: results.imagePath
@@ -177,6 +192,7 @@ export class UpdateTour extends Component {
         let durationColor = this.state.durationIsValid === true ? "green" : "red";
         let dateColor = this.state.dateStartIsValid === true ? "green" : "red";
         let countryFromColor = this.state.countryFromIsValid === true ? "green" : "red";
+        let countryToColor = this.state.countryToIsValid === true ? "green" : "red";
         let aboutTourColor = this.state.aboutTourIsValid == true ? "green" : "red";
         let transportColor = this.state.transportIsValid == true ? "green" : "red";
 
@@ -200,7 +216,10 @@ export class UpdateTour extends Component {
                             <input type="date" value={this.state.dateStart}  placeholder="Дата начала" className="form-control" onChange={this.onChangeDate} style={{ borderColor: dateColor }} />
                         </div>
                         <div className="form-group">
-                            <input type="text" value={this.state.countryFrom} placeholder="Страна" className="form-control" onChange={this.onChangecountryFrom} style={{ borderColor: countryFromColor }} />
+                            <input type="text" value={this.state.countryFrom} placeholder="Страна отправления" className="form-control" onChange={this.onChangecountryFrom} style={{ borderColor: countryFromColor }} />
+                        </div>
+                        <div className="form-group">
+                            <input type="text" value={this.state.countryTo} placeholder="Страна прибытия" className="form-control" onChange={this.onChangecountryTo} style={{ borderColor: countryToColor }} />
                         </div>
                         <div className="form-group">
                             <input type="text" value={this.state.transport} placeholder="Транспорт" className="form-control" onChange={this.onChangeTransport} style={{ borderColor: transportColor }} />
@@ -234,6 +253,7 @@ export class UpdateTour extends Component {
                     <p>{this.state.cost}$</p>
                     <p>{date.toLocaleDateString()}</p>
                     <p>{this.state.countryFrom}</p>
+                    <p>{this.state.countryTo}</p>
                     <p>{this.state.duration} дней</p>
                     <p>{this.state.transport}</p>
                     <p>{this.state.aboutTour}</p>

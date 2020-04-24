@@ -23,12 +23,16 @@ namespace TravelAgency.BLL.Services
 
         public async Task<bool> Cancel(int orderId)
         {
-            Orderr order = _orderRepository.GetById(orderId);
+            Orderr order = _orderRepository.GetById(orderId);           
 
             if (order == null)
             {
                 return false;
             }
+
+            var fHotel = await _unitOfWork.Hotels.GetById(order.HotelId);
+            fHotel.HotelSize++;
+            await _unitOfWork.Hotels.Update(fHotel);
 
             return await _orderRepository
                 .Cancel(order);
@@ -48,7 +52,7 @@ namespace TravelAgency.BLL.Services
                 HotelId = order.HotelId,
                 UserId = user.UserId,
             });
-             new EmailService().SendAsyncEmail(user.Email, "TRAVELA", $"Вы успешно забронировали тур в отеле {fHotel.HotelName} на {fTour.DateStart}");
+             new EmailService().SendAsyncEmail(user.Email, "TRAVELA", $"Вы успешно забронировали тур {fTour.TourName} в отеле {fHotel.HotelName}.\n Дата отправления: {fTour.DateStart} \nМесто отправления: {fTour.CountryFrom} \nМесто прибытия: {fTour.CountryTo}");
             return fOrder;
         }
 
@@ -78,6 +82,7 @@ namespace TravelAgency.BLL.Services
                 Class = hotel.Class,
                 TourId = tour.TourId,
                 CountryFrom = tour.CountryFrom,
+                CountryTo = tour.CountryTo,
                 DateStart = tour.DateStart,
                 Description = hotel.Description,
                 Duration = tour.Duration,

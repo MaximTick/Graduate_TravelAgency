@@ -7,6 +7,7 @@ export class CreateTour extends Component {
         this.state = {
             name: "", nameIsValid: false,
             countryFrom: "", countryFromIsValid: false,
+            countryTo: "", countryToIsValid: false,
             duration: 0, durationIsValid: false,
             cost: 0, costIsValid: false,
             imagePath:[],
@@ -19,6 +20,7 @@ export class CreateTour extends Component {
         this.onChangeCost = this.onChangeCost.bind(this);
         this.onChangeDuration = this.onChangeDuration.bind(this);
         this.onChangecountryFrom = this.onChangecountryFrom.bind(this);
+        this.onChangecountryTo = this.onChangecountryTo.bind(this);
         this.onChangeTransport = this.onChangeTransport.bind(this);
         this.onChangeAboutTour = this.onChangeAboutTour.bind(this);
         this.onChangeDate = this.onChangeDate.bind(this);
@@ -44,6 +46,15 @@ export class CreateTour extends Component {
         let val = e.target.value;
         let valid = this.validatecountryFrom(val);
         this.setState({ countryFrom: val, countryFromIsValid: valid });
+    }
+    validatecountryTo(countryTo) {
+        return countryTo.length > 2 && countryTo.length <= 70;
+    }
+
+    onChangecountryTo(e) {
+        let val = e.target.value;
+        let valid = this.validatecountryTo(val);
+        this.setState({ countryTo: val, countryToIsValid: valid });
     }
 
     validateDuration(duration) {
@@ -121,11 +132,12 @@ export class CreateTour extends Component {
 
         if (this.state.nameIsValid == true && this.state.costIsValid == true &&
             this.state.durationIsValid == true && this.state.dateStartIsValid == true &&
-            this.state.countryFromIsValid == true) {
+            this.state.countryFromIsValid == true, this.state.countryToIsValid == true) {
 
             let form = new FormData();
             form.append('tourName', this.state.name);
             form.append('countryFrom', this.state.countryFrom);
+            form.append('countryTo', this.state.countryTo);
             form.append('dateStart', this.state.dateStart);
             form.append('cost', this.state.cost);
             form.append('duration', this.state.duration);
@@ -157,6 +169,7 @@ export class CreateTour extends Component {
         let durationColor = this.state.durationIsValid == true ? "green" : "red";
         let dateColor = this.state.dateStartIsValid == true ? "green" : "red";
         let countryFromColor = this.state.countryFromIsValid == true ? "green" : "red";
+        let countryToColor = this.state.countryToIsValid == true ? "green" : "red";
         let aboutTourColor = this.state.aboutTourIsValid == true ? "green" : "red";
         let transportColor = this.state.transportIsValid == true ? "green" : "red";
 
@@ -181,7 +194,10 @@ export class CreateTour extends Component {
                             <input type="date" placeholder="Дата начала" className="form-control" onChange={this.onChangeDate} style={{ borderColor: dateColor }} />
                         </div>
                         <div className="form-group">
-                            <input type="text" placeholder="Страна" className="form-control" onChange={this.onChangecountryFrom} style={{ borderColor: countryFromColor }} />
+                            <input type="text" placeholder="Место отправления" className="form-control" onChange={this.onChangecountryFrom} style={{ borderColor: countryFromColor }} />
+                        </div>
+                        <div className="form-group">
+                            <input type="text" placeholder="Место прибытия" className="form-control" onChange={this.onChangecountryTo} style={{ borderColor: countryToColor }} />
                         </div>
                         <div className="form-group">
                             <input type="text" placeholder="Транспорт" className="form-control" onChange={this.onChangeTransport} style={{ borderColor: transportColor }} />
@@ -216,6 +232,9 @@ export class CreateTour extends Component {
                     <p>{this.state.cost}$</p>
                     <p>{date.toLocaleDateString()}</p>
                     <p>{this.state.countryFrom}</p>
+                    <p>{this.state.countryTo}</p>
+                    <p>{this.state.aboutTour}</p>
+                    <p>{this.state.transport}</p>
                     <p>{this.state.duration} дней</p>
                     <div><img style={{maxWidth: '100%'}} src={atob(this.state.imagePath)} alt="Фото"/></div>                                                        
                 </div>

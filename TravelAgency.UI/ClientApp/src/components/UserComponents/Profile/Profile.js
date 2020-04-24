@@ -59,6 +59,7 @@ export class Profile extends Component {
                                     <th>ЦЕНА</th>
                                     <th>ДАТА ЗАКАЗА</th>
                                     <th>ДАННЫЕ О БРОНИ</th>
+                                    <th>ОТМЕНА БРОНИ</th>
                                 </tr>
                             </thead>
                             <tbody >
@@ -72,6 +73,9 @@ export class Profile extends Component {
                                                 <td>{date.toLocaleDateString()}</td>
                                                 <td>
                                                     <Link className="btn btn-outline-info" to={`/showOrders/${item.hotelId}`} >ПОСМОТРЕТЬ БРОНЬ</Link>
+                                                </td>
+                                                <td>
+                                                    <Link className="btn btn-outline-info" to={`/deleteOrders/${item.orderId}`} >ОТМЕНИТЬ БРОНЬ</Link>
                                                 </td>
                                             </tr>
                                         );

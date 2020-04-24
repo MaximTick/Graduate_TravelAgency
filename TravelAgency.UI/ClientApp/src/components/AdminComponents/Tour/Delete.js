@@ -8,6 +8,9 @@ export class DeleteTour extends Component {
             tourId: 0,
             name: "",
             countryFrom: "",
+            countryTo: "",
+            aboutTour:"",
+            transport: "",
             duration: 0,
             cost: 0,
             dateStart: new Date(),
@@ -29,7 +32,7 @@ export class DeleteTour extends Component {
         });
 
         if (response.ok) {
-            alert('Success!!!');
+            alert('Тур успешно удален!!!');
             this.props.history.push('/toursA');
         }
     }
@@ -49,6 +52,7 @@ export class DeleteTour extends Component {
                 dateStart: results.dateStart,
                 cost: results.cost,
                 countryFrom: results.countryFrom,
+                countryTo: results.countryTo,
                 imagePath: results.imagePath
             }))
         }
@@ -87,6 +91,9 @@ export class DeleteTour extends Component {
                     <p>{this.state.cost}$</p>
                     <p>{date.toLocaleDateString()}</p>
                     <p>{this.state.countryFrom}</p>
+                    <p>{this.state.countryTo}</p>
+                    <p>{this.state.aboutTour}</p>
+                    <p>{this.state.transport}</p>
                     <p>{this.state.duration} дней</p>
                     <img style={{maxWidth: '100%'}} src={atob(this.state.imagePath)}/>
                 </div>

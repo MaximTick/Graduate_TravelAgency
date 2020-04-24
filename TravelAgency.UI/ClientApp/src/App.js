@@ -24,6 +24,8 @@ import { AuctionInfo } from './components/UserComponents/Auction/Info';
 import { CreateAuction } from './components/AdminComponents/Auction/Create';
 import { DeleteAuction } from './components/AdminComponents/Auction/Delete';
 import { ShowOrder } from './components/UserComponents/Order/ShowOrder';
+import { DeleteOrder } from './components/UserComponents/Order/DeleteOrder';
+
 
 
 export default class App extends Component {
@@ -61,6 +63,7 @@ export default class App extends Component {
 
                 <Route path='/orders/:id' component={Order} />
                 <Route path='/showOrders/:id' component={ShowOrder} />
+                <Route path='/deleteOrders/:id' component={DeleteOrder} />
             </Layout>
         );
     }
