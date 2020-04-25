@@ -4,10 +4,6 @@ using System.Web.Http;
 using TravelAgency.BLL.Intrefaces;
 using TravelAgency.Model.ViewModels.Tour;
 using TravelAgency.UI.Contracts;
-using HttpDeleteAttribute = Microsoft.AspNetCore.Mvc.HttpDeleteAttribute;
-using HttpGetAttribute = Microsoft.AspNetCore.Mvc.HttpGetAttribute;
-using HttpPostAttribute = Microsoft.AspNetCore.Mvc.HttpPostAttribute;
-using HttpPutAttribute = Microsoft.AspNetCore.Mvc.HttpPutAttribute;
 
 namespace TravelAgency.UI.Controllers
 {
@@ -58,7 +54,7 @@ namespace TravelAgency.UI.Controllers
         }
 
         [HttpPost(RoutesApi.Tour.Create)]
-        [Authorize(Roles ="admin")]
+       // [Authorize(Roles ="admin")]
         public async Task<IActionResult> Create([FromForm]TourVM model)
         {
             if (ModelState.IsValid)

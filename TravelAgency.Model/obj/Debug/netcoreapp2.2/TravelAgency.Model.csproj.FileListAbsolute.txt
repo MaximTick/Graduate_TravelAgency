@@ -9,9 +9,9 @@ D:\Projects\TravelAgency\TravelAgency.Model\obj\Debug\netcoreapp2.2\TravelAgency
 D:\tieza\TravelAgency\TravelAgency.Model\bin\Debug\netcoreapp2.2\TravelAgency.Model.deps.json
 D:\tieza\TravelAgency\TravelAgency.Model\bin\Debug\netcoreapp2.2\TravelAgency.Model.dll
 D:\tieza\TravelAgency\TravelAgency.Model\bin\Debug\netcoreapp2.2\TravelAgency.Model.pdb
-D:\tieza\TravelAgency\TravelAgency.Model\obj\Debug\netcoreapp2.2\TravelAgency.Model.csprojAssemblyReference.cache
+D:\tieza\TravelAgency\TravelAgency.Model\obj\Debug\netcoreapp2.2\TravelAgency.Model.csproj.CoreCompileInputs.cache
 D:\tieza\TravelAgency\TravelAgency.Model\obj\Debug\netcoreapp2.2\TravelAgency.Model.AssemblyInfoInputs.cache
 D:\tieza\TravelAgency\TravelAgency.Model\obj\Debug\netcoreapp2.2\TravelAgency.Model.AssemblyInfo.cs
 D:\tieza\TravelAgency\TravelAgency.Model\obj\Debug\netcoreapp2.2\TravelAgency.Model.dll
 D:\tieza\TravelAgency\TravelAgency.Model\obj\Debug\netcoreapp2.2\TravelAgency.Model.pdb
-D:\tieza\TravelAgency\TravelAgency.Model\obj\Debug\netcoreapp2.2\TravelAgency.Model.csproj.CoreCompileInputs.cache
+D:\tieza\TravelAgency\TravelAgency.Model\obj\Debug\netcoreapp2.2\TravelAgency.Model.csprojAssemblyReference.cache

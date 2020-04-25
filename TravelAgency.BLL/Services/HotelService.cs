@@ -21,6 +21,7 @@ namespace TravelAgency.BLL.Services
         {
             _unitOfWork = unitOfWork;
         }
+        //public HotelService() { }
 
         //public HotelService(IUnitOfWork unitOfWork, IHostingEnvironment hostingEnvironment)
         //{

@@ -18,6 +18,7 @@ namespace TravelAgency.UI.Controllers
             _hotelService = hotelService;
         }
 
+
         [HttpGet(RoutesApi.Hotel.GetAll)]
         public async Task<IActionResult> GetAll()
         {
@@ -40,12 +41,17 @@ namespace TravelAgency.UI.Controllers
         public async Task<IActionResult> Get(int hotelId)
         {
             HotelVM hotel = await _hotelService.GetById(hotelId);
-
-            return Ok(hotel);
+            if (hotel.HotelId != 0 && hotel.TourId != 0)
+            {
+                return Ok(hotel);
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
 
         [HttpPost(RoutesApi.Hotel.Create)]
-        //[Authorize(Roles = "admin")]
         public async Task<IActionResult> Create([FromForm]HotelVM model)
         {
             if (ModelState.IsValid)
@@ -88,7 +94,6 @@ namespace TravelAgency.UI.Controllers
                     return Ok();
                 }
             }
-
             return BadRequest();
         }
     }

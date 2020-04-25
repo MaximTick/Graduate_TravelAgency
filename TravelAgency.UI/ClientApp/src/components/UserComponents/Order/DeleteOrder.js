@@ -45,7 +45,8 @@ export class DeleteOrder extends Component {
     }
 
     async handleSubmit() {
-        let url = "api/v1/orders/"  + this.props.match.params.id;
+        
+        let url = "api/v1/orders/"  + this.props.match.params.orderId;
         let method = 'DELETE';
 
         let response = await fetch(url, {
@@ -54,7 +55,7 @@ export class DeleteOrder extends Component {
         })
 
         if (response.ok) {
-            alert("Операция прошла успешно!!!");
+            alert("Вы успешно отменили бронь!");
             this.props.history.push('/hotelsU');
         } else {
             alert(`Не удалось отменить бронь. Попробуйте повторить операцию`);
@@ -64,8 +65,8 @@ export class DeleteOrder extends Component {
 
 
     async loadData() {
-       
-        let url = "api/v1/ordersInfo/" +  this.props.match.params.id;
+
+        let url = "api/v1/ordersInfo/" + this.props.match.params.id;
 
         let response = await fetch(url);
 
@@ -86,7 +87,7 @@ export class DeleteOrder extends Component {
     render() {
         let date = new Date(this.state.order.dateStart);
         var IsFull;
-        if(this.state.order.hotelSize>0)
+        if(this.state.order.hotelSize > 0)
             IsFull="есть";
         else
             IsFull="нет";
@@ -97,8 +98,8 @@ export class DeleteOrder extends Component {
                         <nav aria-label="breadcrumb">
                             <ol className="breadcrumb">
                                 <Link className="breadcrumb-item" to={`/`}>Главная</Link>
-                                <Link className="breadcrumb-item" to={`/hotelsU`}>Отели</Link>
-                                <li className="breadcrumb-item active" aria-current="page">Забронировать</li>
+                                <Link className="breadcrumb-item" to={`/profile`}>Профиль</Link>
+                                <li className="breadcrumb-item active" aria-current="page">Отмена Бронирования</li>
                             </ol>
                         </nav>
                     </div>
@@ -106,8 +107,7 @@ export class DeleteOrder extends Component {
                 <div className="row">
                     <div className="col-md-12">
                         <div className="alert alert-info">
-                            <span style={{ fontSize: "30px" }}><b>ЦЕНА:</b> {this.state.order.totalCost}$</span>
-
+                            <span style={{ fontSize: "30px" }}><b>ЦЕНА:</b> {this.state.order.totalCost}$</span>                                                    
                         </div>
                     </div>
                 </div>
@@ -149,13 +149,10 @@ export class DeleteOrder extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="row">
+ 
                     <div className="col-md-12">
-                        <div className="alert alert-success">
-                                <input type="button" className="btn btn-success" value="Отменить бронь" onClick={this.modalOrder} />
-                        </div>
-                    </div>
-                </div>
+                          <input type="button" className="btn btn-danger" value="Отменить бронь" onClick={this.modalOrder} />
+                     </div>
 
 
                 <Modal isOpen={this.state.modalOrder} >

@@ -16,6 +16,7 @@ export class Profile extends Component {
         this.cancelOrder = this.cancelOrder.bind(this);
     }
 
+    
     modalCancelOrder() {
         this.setState({
             modalCancelOrder: !this.state.modalCancelOrder
@@ -39,6 +40,7 @@ export class Profile extends Component {
             }));
         }
     }
+
 
     async componentDidMount() {
         await this.loadData();
@@ -66,16 +68,15 @@ export class Profile extends Component {
                                 {
                                     this.state.listOrder.map(function (item) {
                                         let date = new Date(item.dateOrder);
-
-                                        return (
+                                        return (                                            
                                             <tr key={item.orderId}>
                                                 <td>{item.cost}</td>
                                                 <td>{date.toLocaleDateString()}</td>
                                                 <td>
-                                                    <Link className="btn btn-outline-info" to={`/showOrders/${item.hotelId}`} >ПОСМОТРЕТЬ БРОНЬ</Link>
+                                                    <Link className="btn btn-outline-info" to={`/showOrders/${item.hotelId}/3`} >ПОСМОТРЕТЬ БРОНЬ</Link>
                                                 </td>
-                                                <td>
-                                                    <Link className="btn btn-outline-info" to={`/deleteOrders/${item.orderId}`} >ОТМЕНИТЬ БРОНЬ</Link>
+                                                <td>                                                                                                         
+                                                <Link className="btn btn-danger" to={`/deleteOrder/${item.hotelId}/${item.orderId}`} >ОТМЕНИТЬ БРОНЬ</Link>
                                                 </td>
                                             </tr>
                                         );

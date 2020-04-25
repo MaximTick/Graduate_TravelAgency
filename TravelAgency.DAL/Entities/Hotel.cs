@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TravelAgency.DAL.Entities
 {
@@ -14,7 +15,7 @@ namespace TravelAgency.DAL.Entities
         public int HotelId { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [Column(TypeName ="varchar(50)")]
         public string HotelName { get; set; }
 
         [Required]

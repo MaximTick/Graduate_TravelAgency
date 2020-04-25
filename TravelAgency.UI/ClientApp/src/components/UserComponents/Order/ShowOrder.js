@@ -19,7 +19,6 @@ export class ShowOrder extends Component {
 
         this.modalOrder = this.modalOrder.bind(this);
         this.modalMessage = this.modalMessage.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
         this.handleSendMessage = this.handleSendMessage.bind(this);
     }
 
@@ -45,27 +44,6 @@ export class ShowOrder extends Component {
         });
     }
 
-    async handleSubmit() {
-        let form = new FormData();
-        form.append('cost', this.state.order.totalCost);
-        form.append('hotelId', this.state.order.hotelId);
-
-        let url = "api/v1/orders";
-        let method = 'POST';
-
-        let response = await fetch(url, {
-            method: method,
-            mode: 'cors',
-            body: form
-        })
-
-        if (response.ok) {
-            alert("Операция прошла успешно!!!");
-            this.props.history.push('/hotelsU');
-        } else {
-            this.props.history.push('/login');
-        }
-    }
 
     async handleSendMessage() {
         if (this.state.messageIsValid == true) {
@@ -92,6 +70,7 @@ export class ShowOrder extends Component {
     }
 
     async loadData() {
+        debugger
         let url = "api/v1/ordersInfo/" + this.props.match.params.id;
         let urlComments = "api/v1/comments/" + this.props.match.params.id;
 
@@ -131,8 +110,8 @@ export class ShowOrder extends Component {
                         <nav aria-label="breadcrumb">
                             <ol className="breadcrumb">
                                 <Link className="breadcrumb-item" to={`/`}>Главная</Link>
-                                <Link className="breadcrumb-item" to={`/hotelsU`}>Отели</Link>
-                                <li className="breadcrumb-item active" aria-current="page">Забронировать</li>
+                                <Link className="breadcrumb-item" to={`/profile`}>Профиль</Link>
+                                <li className="breadcrumb-item active" aria-current="page">Забронированный Тур</li>
                             </ol>
                         </nav>
                     </div>

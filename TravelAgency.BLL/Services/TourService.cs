@@ -14,6 +14,10 @@ namespace TravelAgency.BLL.Services
     {
         private readonly IUnitOfWork _unitOfWork;
 
+        public TourService()
+        {
+        }
+
         public TourService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;

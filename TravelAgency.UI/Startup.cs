@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
+using TravelAgency.BLL.Intrefaces;
+using TravelAgency.BLL.Services;
 using TravelAgency.UI.Installers;
 
 namespace TravelAgency.UI
@@ -41,6 +43,8 @@ namespace TravelAgency.UI
             {
                 options.AddPolicy("RequireAdministratorRole", policy => policy.RequireRole("admin"));
             });
+
+            services.AddScoped<IHotelService, HotelService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
