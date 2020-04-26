@@ -20,3 +20,15 @@ D:\tieza\TravelAgency\TravelAgency.DAL\obj\Debug\netcoreapp2.2\TravelAgency.DAL.
 D:\tieza\TravelAgency\TravelAgency.DAL\obj\Debug\netcoreapp2.2\TravelAgency.DAL.pdb
 D:\tieza\TravelAgency\TravelAgency.DAL\obj\Debug\netcoreapp2.2\TravelAgency.DAL.genruntimeconfig.cache
 D:\tieza\TravelAgency\TravelAgency.DAL\obj\Debug\netcoreapp2.2\TravelAgency.DAL.csprojAssemblyReference.cache
+D:\tieza\clone\Graduate_TravelAgency\TravelAgency.DAL\bin\Debug\netcoreapp2.2\TravelAgency.DAL.deps.json
+D:\tieza\clone\Graduate_TravelAgency\TravelAgency.DAL\bin\Debug\netcoreapp2.2\TravelAgency.DAL.runtimeconfig.json
+D:\tieza\clone\Graduate_TravelAgency\TravelAgency.DAL\bin\Debug\netcoreapp2.2\TravelAgency.DAL.runtimeconfig.dev.json
+D:\tieza\clone\Graduate_TravelAgency\TravelAgency.DAL\bin\Debug\netcoreapp2.2\TravelAgency.DAL.dll
+D:\tieza\clone\Graduate_TravelAgency\TravelAgency.DAL\bin\Debug\netcoreapp2.2\TravelAgency.DAL.pdb
+D:\tieza\clone\Graduate_TravelAgency\TravelAgency.DAL\obj\Debug\netcoreapp2.2\TravelAgency.DAL.csprojAssemblyReference.cache
+D:\tieza\clone\Graduate_TravelAgency\TravelAgency.DAL\obj\Debug\netcoreapp2.2\TravelAgency.DAL.csproj.CoreCompileInputs.cache
+D:\tieza\clone\Graduate_TravelAgency\TravelAgency.DAL\obj\Debug\netcoreapp2.2\TravelAgency.DAL.AssemblyInfoInputs.cache
+D:\tieza\clone\Graduate_TravelAgency\TravelAgency.DAL\obj\Debug\netcoreapp2.2\TravelAgency.DAL.AssemblyInfo.cs
+D:\tieza\clone\Graduate_TravelAgency\TravelAgency.DAL\obj\Debug\netcoreapp2.2\TravelAgency.DAL.dll
+D:\tieza\clone\Graduate_TravelAgency\TravelAgency.DAL\obj\Debug\netcoreapp2.2\TravelAgency.DAL.pdb
+D:\tieza\clone\Graduate_TravelAgency\TravelAgency.DAL\obj\Debug\netcoreapp2.2\TravelAgency.DAL.genruntimeconfig.cache

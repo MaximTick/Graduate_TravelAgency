@@ -6752,11 +6752,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\tieza\\TravelAgency\\TravelAgency.BLL\\TravelAgency.BLL.csproj",
+      "projectUniqueName": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.BLL\\TravelAgency.BLL.csproj",
       "projectName": "TravelAgency.BLL",
-      "projectPath": "D:\\tieza\\TravelAgency\\TravelAgency.BLL\\TravelAgency.BLL.csproj",
+      "projectPath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.BLL\\TravelAgency.BLL.csproj",
       "packagesPath": "C:\\Users\\maxim\\.nuget\\packages\\",
-      "outputPath": "D:\\tieza\\TravelAgency\\TravelAgency.BLL\\obj\\",
+      "outputPath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.BLL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\maxim\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6772,11 +6772,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "D:\\tieza\\TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj": {
-              "projectPath": "D:\\tieza\\TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj"
+            "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj": {
+              "projectPath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj"
             },
-            "D:\\tieza\\TravelAgency\\TravelAgency.Model\\TravelAgency.Model.csproj": {
-              "projectPath": "D:\\tieza\\TravelAgency\\TravelAgency.Model\\TravelAgency.Model.csproj"
+            "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.Model\\TravelAgency.Model.csproj": {
+              "projectPath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.Model\\TravelAgency.Model.csproj"
             }
           }
         }

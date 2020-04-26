@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\tieza\\TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj": {}
+    "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj": {}
   },
   "projects": {
-    "D:\\tieza\\TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj": {
+    "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\tieza\\TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj",
+        "projectUniqueName": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj",
         "projectName": "TravelAgency.DAL",
-        "projectPath": "D:\\tieza\\TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj",
+        "projectPath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj",
         "packagesPath": "C:\\Users\\maxim\\.nuget\\packages\\",
-        "outputPath": "D:\\tieza\\TravelAgency\\TravelAgency.DAL\\obj\\",
+        "outputPath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\maxim\\AppData\\Roaming\\NuGet\\NuGet.Config",

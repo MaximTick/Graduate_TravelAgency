@@ -25,3 +25,17 @@ D:\tieza\TravelAgency\TravelAgency.BLL\obj\Debug\netcoreapp2.2\TravelAgency.BLL.
 D:\tieza\TravelAgency\TravelAgency.BLL\obj\Debug\netcoreapp2.2\TravelAgency.BLL.csproj.CopyComplete
 D:\tieza\TravelAgency\TravelAgency.BLL\obj\Debug\netcoreapp2.2\TravelAgency.BLL.dll
 D:\tieza\TravelAgency\TravelAgency.BLL\obj\Debug\netcoreapp2.2\TravelAgency.BLL.pdb
+D:\tieza\clone\Graduate_TravelAgency\TravelAgency.BLL\bin\Debug\netcoreapp2.2\TravelAgency.BLL.deps.json
+D:\tieza\clone\Graduate_TravelAgency\TravelAgency.BLL\bin\Debug\netcoreapp2.2\TravelAgency.BLL.dll
+D:\tieza\clone\Graduate_TravelAgency\TravelAgency.BLL\bin\Debug\netcoreapp2.2\TravelAgency.BLL.pdb
+D:\tieza\clone\Graduate_TravelAgency\TravelAgency.BLL\bin\Debug\netcoreapp2.2\TravelAgency.DAL.dll
+D:\tieza\clone\Graduate_TravelAgency\TravelAgency.BLL\bin\Debug\netcoreapp2.2\TravelAgency.Model.dll
+D:\tieza\clone\Graduate_TravelAgency\TravelAgency.BLL\bin\Debug\netcoreapp2.2\TravelAgency.DAL.pdb
+D:\tieza\clone\Graduate_TravelAgency\TravelAgency.BLL\bin\Debug\netcoreapp2.2\TravelAgency.Model.pdb
+D:\tieza\clone\Graduate_TravelAgency\TravelAgency.BLL\obj\Debug\netcoreapp2.2\TravelAgency.BLL.csprojAssemblyReference.cache
+D:\tieza\clone\Graduate_TravelAgency\TravelAgency.BLL\obj\Debug\netcoreapp2.2\TravelAgency.BLL.csproj.CoreCompileInputs.cache
+D:\tieza\clone\Graduate_TravelAgency\TravelAgency.BLL\obj\Debug\netcoreapp2.2\TravelAgency.BLL.AssemblyInfoInputs.cache
+D:\tieza\clone\Graduate_TravelAgency\TravelAgency.BLL\obj\Debug\netcoreapp2.2\TravelAgency.BLL.AssemblyInfo.cs
+D:\tieza\clone\Graduate_TravelAgency\TravelAgency.BLL\obj\Debug\netcoreapp2.2\TravelAgency.BLL.csproj.CopyComplete
+D:\tieza\clone\Graduate_TravelAgency\TravelAgency.BLL\obj\Debug\netcoreapp2.2\TravelAgency.BLL.dll
+D:\tieza\clone\Graduate_TravelAgency\TravelAgency.BLL\obj\Debug\netcoreapp2.2\TravelAgency.BLL.pdb

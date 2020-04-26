@@ -45,7 +45,7 @@ export class DeleteOrder extends Component {
     }
 
     async handleSubmit() {
-        
+  debugger      
         let url = "api/v1/orders/"  + this.props.match.params.orderId;
         let method = 'DELETE';
 
@@ -65,8 +65,8 @@ export class DeleteOrder extends Component {
 
 
     async loadData() {
-
-        let url = "api/v1/ordersInfo/" + this.props.match.params.orderId;
+debugger
+        let url = "api/v1/ordersInfo/" + this.props.match.params.id;
 
         let response = await fetch(url);
 
@@ -104,13 +104,7 @@ export class DeleteOrder extends Component {
                         </nav>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-md-12">
-                        <div className="alert alert-info">
-                            <span style={{ fontSize: "30px" }}><b>ЦЕНА:</b> {this.state.order.totalCost}$</span>                                                    
-                        </div>
-                    </div>
-                </div>
+
 
                 <div className="row">
                     <div className="col-md-6 mb-3">

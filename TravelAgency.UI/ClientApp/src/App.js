@@ -64,7 +64,7 @@ export default class App extends Component {
 
                 <Route path='/orders/:id' component={Order} />
                 <Route path='/showOrders/:id/' component={ShowOrder} />
-                <Route path='/deleteOrder/:id/:orderId' component={DeleteOrder} />
+                <Route path='/deleteOrder/:orderId/:id' component={DeleteOrder} />
             </Layout>
         );
     }

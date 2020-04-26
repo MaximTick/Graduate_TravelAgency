@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LHpWaOr09K4mCxLgHJ3EgiD56df4MwGroIdcqavYdd1y9jXGId11HqKJr+kr7m4qyw//NkbypHHlW3QQp3KgQA==",
+  "dgSpecHash": "51g9atn/C/VMaB4aht635kdIR0azxNe/c2vVh09Sh9HdFONrornUy/TjMkze3fn05DZ8xBNauhrZcuGqIyKAoA==",
   "success": true,
-  "projectFilePath": "D:\\tieza\\TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj",
+  "projectFilePath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\maxim\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\maxim\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

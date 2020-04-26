@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dc6e7NgOrd9QqMgb0j9fHljr64oUxcVC0Q0CBC2wbwkuNpjQzg0OxBsh+7iHfXeCULsf5WxZNYK+GnuP6SY+Cg==",
+  "dgSpecHash": "3B+tdoIijexcGqYRzbyaFpZBXGEdtBCp32txoS+9QtXELVGxuxqTlE8Tdt5CqjGspdqkjKt6PcDS7C+tVnT5LQ==",
   "success": true,
-  "projectFilePath": "D:\\tieza\\TravelAgency\\TravelAgency.Model\\TravelAgency.Model.csproj",
+  "projectFilePath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.Model\\TravelAgency.Model.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\maxim\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\maxim\\.nuget\\packages\\microsoft.extensions.primitives\\2.2.0\\microsoft.extensions.primitives.2.2.0.nupkg.sha512",

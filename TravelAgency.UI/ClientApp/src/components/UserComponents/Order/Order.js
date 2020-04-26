@@ -193,7 +193,7 @@ export class Order extends Component {
                     <div className="col-md-12">
                         <div className="alert alert-success">
                             {
-                                this.state.order.hotelSize > 0
+                                this.state.order.hotelSize > 0 
                                 ?<input type="button" className="btn btn-success" value="Забронировать" onClick={this.modalOrder} />
                                 :<input type="button" disabled className="btn btn-success" value="Забронировать" onClick={this.modalOrder} />
                             }

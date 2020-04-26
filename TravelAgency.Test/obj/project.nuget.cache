@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pwb7TdrFtqocqWCK7kMe5RxLTqs4OfLgnC8Tze2MmyiZA+Zpx06+mwHs2aOvG4X1auU+jt2pcpldLAxi6UkDiw==",
+  "dgSpecHash": "kR/5QJK6tU/hzB//vi4qZGBLFerx1OveNzz1i1IHLQI/IbifOprpoXjrvYmP5beTnIX+T+tZGbshMQCGlCHCWw==",
   "success": true,
-  "projectFilePath": "D:\\tieza\\TravelAgency\\TravelAgency.Test\\TravelAgency.Test.csproj",
+  "projectFilePath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.Test\\TravelAgency.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\maxim\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
     "C:\\Users\\maxim\\.nuget\\packages\\fluentassertions\\5.10.3\\fluentassertions.5.10.3.nupkg.sha512",

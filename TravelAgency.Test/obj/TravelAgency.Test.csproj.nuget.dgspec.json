@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\tieza\\TravelAgency\\TravelAgency.Test\\TravelAgency.Test.csproj": {}
+    "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.Test\\TravelAgency.Test.csproj": {}
   },
   "projects": {
-    "D:\\tieza\\TravelAgency\\TravelAgency.BLL\\TravelAgency.BLL.csproj": {
+    "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.BLL\\TravelAgency.BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\tieza\\TravelAgency\\TravelAgency.BLL\\TravelAgency.BLL.csproj",
+        "projectUniqueName": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.BLL\\TravelAgency.BLL.csproj",
         "projectName": "TravelAgency.BLL",
-        "projectPath": "D:\\tieza\\TravelAgency\\TravelAgency.BLL\\TravelAgency.BLL.csproj",
+        "projectPath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.BLL\\TravelAgency.BLL.csproj",
         "packagesPath": "C:\\Users\\maxim\\.nuget\\packages\\",
-        "outputPath": "D:\\tieza\\TravelAgency\\TravelAgency.BLL\\obj\\",
+        "outputPath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.BLL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\maxim\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,11 +27,11 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "D:\\tieza\\TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj": {
-                "projectPath": "D:\\tieza\\TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj"
+              "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj": {
+                "projectPath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj"
               },
-              "D:\\tieza\\TravelAgency\\TravelAgency.Model\\TravelAgency.Model.csproj": {
-                "projectPath": "D:\\tieza\\TravelAgency\\TravelAgency.Model\\TravelAgency.Model.csproj"
+              "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.Model\\TravelAgency.Model.csproj": {
+                "projectPath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.Model\\TravelAgency.Model.csproj"
               }
             }
           }
@@ -74,14 +74,14 @@
         }
       }
     },
-    "D:\\tieza\\TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj": {
+    "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\tieza\\TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj",
+        "projectUniqueName": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj",
         "projectName": "TravelAgency.DAL",
-        "projectPath": "D:\\tieza\\TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj",
+        "projectPath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj",
         "packagesPath": "C:\\Users\\maxim\\.nuget\\packages\\",
-        "outputPath": "D:\\tieza\\TravelAgency\\TravelAgency.DAL\\obj\\",
+        "outputPath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\maxim\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -143,14 +143,14 @@
         }
       }
     },
-    "D:\\tieza\\TravelAgency\\TravelAgency.Model\\TravelAgency.Model.csproj": {
+    "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.Model\\TravelAgency.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\tieza\\TravelAgency\\TravelAgency.Model\\TravelAgency.Model.csproj",
+        "projectUniqueName": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.Model\\TravelAgency.Model.csproj",
         "projectName": "TravelAgency.Model",
-        "projectPath": "D:\\tieza\\TravelAgency\\TravelAgency.Model\\TravelAgency.Model.csproj",
+        "projectPath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.Model\\TravelAgency.Model.csproj",
         "packagesPath": "C:\\Users\\maxim\\.nuget\\packages\\",
-        "outputPath": "D:\\tieza\\TravelAgency\\TravelAgency.Model\\obj\\",
+        "outputPath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\maxim\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -202,14 +202,14 @@
         }
       }
     },
-    "D:\\tieza\\TravelAgency\\TravelAgency.Test\\TravelAgency.Test.csproj": {
+    "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.Test\\TravelAgency.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\tieza\\TravelAgency\\TravelAgency.Test\\TravelAgency.Test.csproj",
+        "projectUniqueName": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.Test\\TravelAgency.Test.csproj",
         "projectName": "TravelAgency.Test",
-        "projectPath": "D:\\tieza\\TravelAgency\\TravelAgency.Test\\TravelAgency.Test.csproj",
+        "projectPath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.Test\\TravelAgency.Test.csproj",
         "packagesPath": "C:\\Users\\maxim\\.nuget\\packages\\",
-        "outputPath": "D:\\tieza\\TravelAgency\\TravelAgency.Test\\obj\\",
+        "outputPath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\maxim\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -225,14 +225,14 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\tieza\\TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj": {
-                "projectPath": "D:\\tieza\\TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj"
+              "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj": {
+                "projectPath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj"
               },
-              "D:\\tieza\\TravelAgency\\TravelAgency.Model\\TravelAgency.Model.csproj": {
-                "projectPath": "D:\\tieza\\TravelAgency\\TravelAgency.Model\\TravelAgency.Model.csproj"
+              "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.Model\\TravelAgency.Model.csproj": {
+                "projectPath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.Model\\TravelAgency.Model.csproj"
               },
-              "D:\\tieza\\TravelAgency\\TravelAgency.UI\\TravelAgency.UI.csproj": {
-                "projectPath": "D:\\tieza\\TravelAgency\\TravelAgency.UI\\TravelAgency.UI.csproj"
+              "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.UI\\TravelAgency.UI.csproj": {
+                "projectPath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.UI\\TravelAgency.UI.csproj"
               }
             }
           }
@@ -290,14 +290,14 @@
         }
       }
     },
-    "D:\\tieza\\TravelAgency\\TravelAgency.UI\\TravelAgency.UI.csproj": {
+    "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.UI\\TravelAgency.UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\tieza\\TravelAgency\\TravelAgency.UI\\TravelAgency.UI.csproj",
+        "projectUniqueName": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.UI\\TravelAgency.UI.csproj",
         "projectName": "TravelAgency.UI",
-        "projectPath": "D:\\tieza\\TravelAgency\\TravelAgency.UI\\TravelAgency.UI.csproj",
+        "projectPath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.UI\\TravelAgency.UI.csproj",
         "packagesPath": "C:\\Users\\maxim\\.nuget\\packages\\",
-        "outputPath": "D:\\tieza\\TravelAgency\\TravelAgency.UI\\obj\\",
+        "outputPath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.UI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\maxim\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -313,11 +313,11 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "D:\\tieza\\TravelAgency\\TravelAgency.BLL\\TravelAgency.BLL.csproj": {
-                "projectPath": "D:\\tieza\\TravelAgency\\TravelAgency.BLL\\TravelAgency.BLL.csproj"
+              "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.BLL\\TravelAgency.BLL.csproj": {
+                "projectPath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.BLL\\TravelAgency.BLL.csproj"
               },
-              "D:\\tieza\\TravelAgency\\TravelAgency.Model\\TravelAgency.Model.csproj": {
-                "projectPath": "D:\\tieza\\TravelAgency\\TravelAgency.Model\\TravelAgency.Model.csproj"
+              "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.Model\\TravelAgency.Model.csproj": {
+                "projectPath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.Model\\TravelAgency.Model.csproj"
               }
             }
           }

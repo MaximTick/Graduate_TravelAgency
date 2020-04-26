@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "obaVzD9+wTdCon3LoJQ+mwe1X7RsVd+DExaq8iPiSe1PG+ik8c6w9MqWOAwfcFVUNyd+IU/ihJyuDSz4rP9zQg==",
+  "dgSpecHash": "3x8BKF1ZAouM8XEjnh/PjL+VHSZaCsJXJClp7xHwqxryrFrb8Z/wWAv/HPiGW5S7y0GHrMh23khkq7BuKpumLw==",
   "success": true,
-  "projectFilePath": "D:\\tieza\\TravelAgency\\TravelAgency.BLL\\TravelAgency.BLL.csproj",
+  "projectFilePath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.BLL\\TravelAgency.BLL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\maxim\\.nuget\\packages\\mailkit\\2.6.0\\mailkit.2.6.0.nupkg.sha512",
     "C:\\Users\\maxim\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

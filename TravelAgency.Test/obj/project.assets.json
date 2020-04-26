@@ -10162,11 +10162,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\tieza\\TravelAgency\\TravelAgency.Test\\TravelAgency.Test.csproj",
+      "projectUniqueName": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.Test\\TravelAgency.Test.csproj",
       "projectName": "TravelAgency.Test",
-      "projectPath": "D:\\tieza\\TravelAgency\\TravelAgency.Test\\TravelAgency.Test.csproj",
+      "projectPath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.Test\\TravelAgency.Test.csproj",
       "packagesPath": "C:\\Users\\maxim\\.nuget\\packages\\",
-      "outputPath": "D:\\tieza\\TravelAgency\\TravelAgency.Test\\obj\\",
+      "outputPath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\maxim\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -10182,14 +10182,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\tieza\\TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj": {
-              "projectPath": "D:\\tieza\\TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj"
+            "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj": {
+              "projectPath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.DAL\\TravelAgency.DAL.csproj"
             },
-            "D:\\tieza\\TravelAgency\\TravelAgency.Model\\TravelAgency.Model.csproj": {
-              "projectPath": "D:\\tieza\\TravelAgency\\TravelAgency.Model\\TravelAgency.Model.csproj"
+            "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.Model\\TravelAgency.Model.csproj": {
+              "projectPath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.Model\\TravelAgency.Model.csproj"
             },
-            "D:\\tieza\\TravelAgency\\TravelAgency.UI\\TravelAgency.UI.csproj": {
-              "projectPath": "D:\\tieza\\TravelAgency\\TravelAgency.UI\\TravelAgency.UI.csproj"
+            "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.UI\\TravelAgency.UI.csproj": {
+              "projectPath": "D:\\tieza\\clone\\Graduate_TravelAgency\\TravelAgency.UI\\TravelAgency.UI.csproj"
             }
           }
         }

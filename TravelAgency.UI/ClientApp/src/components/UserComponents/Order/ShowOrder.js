@@ -116,14 +116,7 @@ export class ShowOrder extends Component {
                         </nav>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-md-12">
-                        <div className="alert alert-info">
-                            <span style={{ fontSize: "30px" }}><b>ЦЕНА:</b> {this.state.order.totalCost}$</span>
 
-                        </div>
-                    </div>
-                </div>
 
                 <div className="row">
                     <div className="col-md-6 mb-3">
