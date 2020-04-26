@@ -33,5 +33,12 @@ namespace TravelAgency.DAL.Repositories
                 .Skip((currentPage - 1) * sizePage).Take(sizePage)
                 .ToListAsync();
         }
+
+        public async Task<IEnumerable<Tour>> GetHotToursPagination(int sizePage, int currentPage)
+        {
+            return await _context.Set<Tour>()
+                .Skip((currentPage - 1) * sizePage).Take(sizePage)
+                .ToListAsync();
+        }
     }
 }

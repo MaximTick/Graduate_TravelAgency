@@ -88,13 +88,13 @@ namespace TravelAgency.BLL.Services
                 Duration = tour.Duration,
                 HotelId = hotel.HotelId,
                 HotelName = hotel.HotelName,
-                TotalCost = hotel.Cost + tour.Cost,
+                TotalCost = hotel.Cost + tour.Cost * (100 - tour.Sale) /100,
                 HotelSize = hotel.HotelSize,
                 TourName = tour.TourName,
                 Transport = tour.Transport,
-                AboutTour = tour.AboutTour,
-                ImagePathT = tour.ImagePath,
-                ImagePath = hotel.ImagePath
+                AboutTour = tour.AboutTour
+                //ImagePathT = tour.ImagePath,
+                //ImagePath = hotel.ImagePath
             };
         }
     }

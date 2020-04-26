@@ -35,6 +35,16 @@ namespace TravelAgency.UI.Controllers
             return Ok(new object[] { tours, count });
         }
 
+        [HttpGet(RoutesApi.Tour.GetHotToursPagination)]
+        public async Task<IActionResult> GetHotToursPagination(int pageSize, int pageCurrent)
+        {
+            var tours = await _tourService.GetHotToursPagination(pageSize, pageCurrent);
+
+            var count = await _tourService.Count();
+
+            return Ok(new object[] { tours, count });
+        }
+
         [HttpGet(RoutesApi.Tour.GetHotelsById)]
         public async Task<IActionResult> GetHotelsById(int pageSize, int pageCurrent, int tourId)
         {

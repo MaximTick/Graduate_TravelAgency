@@ -1,4 +1,4 @@
-﻿import React, { Component } from 'react';
+import React, { Component } from 'react';
 import { Pagination } from './SharedComponents/Pagination';
 import { Search } from './SharedComponents/Search';
 import { TableU } from './UserComponents/Tour/Table';
@@ -24,7 +24,7 @@ class Item extends Component {
     }
 }
 
-export class TourU extends Component {
+export class TourH extends Component {
     constructor(props, context) {
         super(props, context);
 
@@ -57,7 +57,8 @@ export class TourU extends Component {
                 return item.tourName.toLowerCase().search(text.toLowerCase()) !== -1 ||
                 item.countryFrom.toLowerCase().search(text.toLowerCase()) !== -1 ||
                 item.countryTo.toLowerCase().search(text.toLowerCase()) !== -1 ||
-                item.duration.toString().toLowerCase().search(text.toLowerCase()) !== -1;
+                item.duration.toString().toLowerCase().search(text.toLowerCase()) !== -1 ||
+                item.cost.toString().toLowerCase().search(text.toLowerCase()) !== -1;
             });
 
             this.setState({ tempList: filteredList });
@@ -102,7 +103,7 @@ export class TourU extends Component {
         let pageCurrent = 1;
         let pageSize = this.state.pageSize;
 
-        let url = "api/v1/toursTemp/" + +pageSize + '/' + +pageCurrent;
+        let url = "api/v1/hotToursTemp/" + +pageSize + '/' + +pageCurrent;
 
         let response = await fetch(url);
 
@@ -128,7 +129,7 @@ export class TourU extends Component {
         pageCurrent++;
 
         if (pageCurrent <= pageTotal) {
-            let url = "api/v1/toursTemp/" + +pageSize + '/' + +pageCurrent;
+            let url = "api/v1/hotToursTemp/" + +pageSize + '/' + +pageCurrent;
             let response = await fetch(url)
 
             if (response.ok) {
@@ -148,7 +149,7 @@ export class TourU extends Component {
         pageCurrent--;
 
         if (pageCurrent >= 1) {
-            let url = "api/v1/toursTemp/" + pageSize + '/' + pageCurrent;
+            let url = "api/v1/hotToursTemp/" + pageSize + '/' + pageCurrent;
             let response = await fetch(url);
 
             if (response.ok) {
@@ -169,7 +170,7 @@ export class TourU extends Component {
         if (pageCurrent !== pageTotal) {
             pageCurrent = pageTotal;
 
-            let url = "api/v1/toursTemp/" + pageSize + '/' + pageCurrent;
+            let url = "api/v1/hotToursTemp/" + pageSize + '/' + pageCurrent;
             let response = await fetch(url);
 
             if (response.ok) {
@@ -193,7 +194,7 @@ export class TourU extends Component {
             pageCurrent = pageTotal;
         }
 
-        let url = "api/v1/toursTemp/" + pageSize + '/' + pageCurrent;
+        let url = "api/v1/hotToursTemp/" + pageSize + '/' + pageCurrent;
         let response = await fetch(url);
 
         if (response.ok) {

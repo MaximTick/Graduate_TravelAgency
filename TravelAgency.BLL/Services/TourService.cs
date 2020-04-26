@@ -48,7 +48,8 @@ namespace TravelAgency.BLL.Services
                     Duration = model.Duration,
                     ImagePath = model.ImagePath,
                     AboutTour = model.AboutTour,
-                    Transport = model.Transport
+                    Transport = model.Transport,
+                    IsHotTour = model.IsHotTour
                 });
         }
 
@@ -71,10 +72,11 @@ namespace TravelAgency.BLL.Services
             var tours = await _unitOfWork.Tours
                 .GetAll();
 
-            return tours.Select(x => new TourVM()
+            return tours.Select(x => new TourVM() 
             {
                 Cost = x.Cost,
                 CountryFrom = x.CountryFrom,
+                Sale = x.Sale,
                 CountryTo = x.CountryTo,
                 DateStart = x.DateStart,
                 Duration = x.Duration,
@@ -82,7 +84,8 @@ namespace TravelAgency.BLL.Services
                 TourName = x.TourName,
                 ImagePath = x.ImagePath,
                 AboutTour = x.AboutTour,
-                Transport = x.Transport
+                Transport = x.Transport,
+                IsHotTour = x.IsHotTour
             });
         }
 
@@ -100,6 +103,7 @@ namespace TravelAgency.BLL.Services
             {
                 Cost = tour.Cost,
                 CountryFrom = tour.CountryFrom,
+                Sale = tour.Sale,
                 CountryTo = tour.CountryTo,
                 DateStart = tour.DateStart,
                 Duration = tour.Duration,
@@ -107,7 +111,8 @@ namespace TravelAgency.BLL.Services
                 TourName = tour.TourName,
                 ImagePath = tour.ImagePath,
                 AboutTour = tour.AboutTour,
-                Transport = tour.Transport
+                Transport = tour.Transport,
+                IsHotTour = tour.IsHotTour
             };
         }
 
@@ -135,7 +140,8 @@ namespace TravelAgency.BLL.Services
 
             return tours.Select(x => new TourVM()
             {
-                Cost = x.Cost,
+                Cost = x.Cost * (100 - x.Sale) / 100,
+                Sale = x.Sale,
                 CountryFrom = x.CountryFrom,
                 CountryTo = x.CountryTo,
                 DateStart = x.DateStart,
@@ -144,7 +150,30 @@ namespace TravelAgency.BLL.Services
                 TourName = x.TourName,
                 AboutTour = x.AboutTour,
                 Transport = x.Transport,
-                ImagePath = x.ImagePath
+                ImagePath = x.ImagePath,
+                IsHotTour = x.IsHotTour
+            });
+        }
+
+        public async Task<IEnumerable<TourVM>> GetHotToursPagination(int pageSize, int pageCurrent)
+        {
+            var tours = await _unitOfWork.Tours
+                .GetHotToursPagination(pageSize, pageCurrent);
+
+            return tours.Where(x => x.IsHotTour == 1).Select(x => new TourVM()
+            {
+                Cost = x.Cost * (100- x.Sale) / 100,
+                CountryFrom = x.CountryFrom,
+                CountryTo = x.CountryTo,
+                DateStart = x.DateStart,
+                Duration = x.Duration,
+                TourId = x.TourId,
+                TourName = x.TourName,
+                AboutTour = x.AboutTour,
+                Transport = x.Transport,
+                ImagePath = x.ImagePath,
+                IsHotTour = x.IsHotTour,
+                Sale = x.Sale
             });
         }
 
@@ -167,6 +196,8 @@ namespace TravelAgency.BLL.Services
             tour.AboutTour = model.AboutTour;
             tour.Transport = model.Transport;
             tour.Cost = model.Cost;
+            tour.IsHotTour = model.IsHotTour;
+            tour.Sale = model.Sale;
 
             return await _unitOfWork.Tours
                 .Update(tour);

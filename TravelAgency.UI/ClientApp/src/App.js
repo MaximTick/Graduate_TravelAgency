@@ -7,6 +7,7 @@ import { Login } from './components/Login';
 import { Register } from './components/Registration';
 import { TourA } from './components/AdminComponents/Tour/Index';
 import { TourU } from './components/Tour';
+import { TourH } from './components/HotTour';
 import { TourHotel } from './components/UserComponents/Tour/Hotel';
 import { CreateTour } from './components/AdminComponents/Tour/Create';
 import { UpdateTour } from './components/AdminComponents/Tour/Update';
@@ -42,7 +43,7 @@ export default class App extends Component {
                 <Route path='/toursA' component={TourA} />
                 <Route path='/hotelsTour/:id' component={TourHotel} />
                 <Route path='/toursU' component={TourU} />
-                <Route path='/toursB' component={TourU} />
+                <Route path='/toursH' component={TourH} />
                 <Route path='/createTour' component={CreateTour} />
                 <Route path='/updateTour/:id' component={UpdateTour} />
                 <Route path='/deleteTour/:id' component={DeleteTour} />
@@ -62,7 +63,7 @@ export default class App extends Component {
                 <Route path='/deleteAuction/:id' component={DeleteAuction} />
 
                 <Route path='/orders/:id' component={Order} />
-                <Route path='/showOrders/:id' component={ShowOrder} />
+                <Route path='/showOrders/:id/' component={ShowOrder} />
                 <Route path='/deleteOrder/:id/:orderId' component={DeleteOrder} />
             </Layout>
         );

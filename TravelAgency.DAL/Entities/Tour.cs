@@ -39,6 +39,9 @@ namespace TravelAgency.DAL.Entities
         [StringLength(30)]
         public string Transport { get; set; }
 
+        public int IsHotTour { get; set; }
+        public int Sale { get; set; } 
+
         [Required]
         public DateTime DateStart { get; set; }
 

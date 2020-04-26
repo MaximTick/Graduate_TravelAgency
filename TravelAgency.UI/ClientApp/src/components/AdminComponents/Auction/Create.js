@@ -52,7 +52,7 @@ export class CreateAuction extends Component {
 
     async handleSubmit(e) {
         e.preventDefault();
-
+debugger
         if (this.state.tourIdIsValid == true && this.state.endDateIsValid == true && this.state.reservePriceIsValid == true) {
             let form = new FormData();
             form.append('reservePrice', this.state.reservePrice);
@@ -69,7 +69,7 @@ export class CreateAuction extends Component {
             })
 
             if (response.ok) {
-                alert("УСПЕШНО!!!");
+                alert("Аукцион успешно создан");
                 this.props.history.push('/auctionsA');
             } else {
                 alert("Error");
@@ -78,6 +78,7 @@ export class CreateAuction extends Component {
     }
 
     async loadData() {
+        debugger
         let url = "api/v1/tours";
 
         let response = await fetch(url);

@@ -11,22 +11,39 @@ export class UpdateTour extends Component {
             countryTo: "", countryToIsValid: true,
             duration: 0, durationIsValid: true,
             cost: 0, costIsValid: true,
+            sale: 0, saleIsValid: true,
             imagePath:[],
             aboutTour:"", aboutTourIsValid: true,
             transport:"",  transportIsValid: true,
+            isHotTour: 0, isHotTourIsValid: true,
             dateStart: new Date(), dateStartIsValid: true,
         }
 
         this.onChangeName = this.onChangeName.bind(this);
         this.onChangeCost = this.onChangeCost.bind(this);
+        this.onChangeSale = this.onChangeSale.bind(this);
         this.onChangeDuration = this.onChangeDuration.bind(this);
         this.onChangecountryFrom = this.onChangecountryFrom.bind(this);
         this.onChangecountryTo = this.onChangecountryTo.bind(this);
         this.onChangeTransport = this.onChangeTransport.bind(this);
         this.onChangeAboutTour = this.onChangeAboutTour.bind(this);
         this.onChangeDate = this.onChangeDate.bind(this);
+        this.onChangeIsHotTour = this.onChangeIsHotTour.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        //this.updateHotRadioBox = this.updateHotRadioBox(this);
     }
+    updateHotRadioBox(){
+        debugger
+       let array = document.getElementsByName("options");
+       let frbutton;
+       for(let i = 0; i < array.length; i++) {
+           if(array[i].value == this.state.isHotTour) {
+               frbutton = array[i];
+           }
+       }
+       debugger;
+       frbutton.checked = true;
+       }
 
     validateName(name) {
         return name.length > 2 && name.length <= 70;
@@ -98,6 +115,16 @@ export class UpdateTour extends Component {
         this.setState({ cost: val, costIsValid: valid });
     }
 
+    validateSale(sale) {
+        return sale >= 0 && sale < 100;
+    }
+
+    onChangeSale(e) {
+        let val = e.target.value;
+        let valid = this.validateSale(val);
+        this.setState({ sale: val, saleIsValid: valid });
+    }
+
     validateDate(date) {
         let currentDate = new Date();
         let selectedDate = new Date(date);
@@ -108,6 +135,17 @@ export class UpdateTour extends Component {
         let val = e.target.value;
         let valid = this.validateDate(val);
         this.setState({ dateStart: val, dateStartIsValid: valid });
+    }
+
+    validateIsHotTour(isHotTour) {
+        return isHotTour >= 0 && isHotTour < 2;
+    }
+
+    onChangeIsHotTour(e) {
+        debugger
+        let val = e.target.value;
+        let valid = this.validateIsHotTour(val);
+        this.setState({ isHotTour: val, isHotTourIsValid: valid });
     }
 
     setFile(e) {    
@@ -121,13 +159,14 @@ export class UpdateTour extends Component {
        // this.setState({ imagePath: e.target.files[0]});
     }//btoa(render.result)
 
+
     async handleSubmit(e) {
         e.preventDefault();
 
         if (this.state.nameIsValid == true && this.state.costIsValid == true &&
             this.state.durationIsValid == true && this.state.dateStartIsValid == true &&
             this.state.countryFromIsValid == true, this.state.transportIsValid == true, 
-            this.state.countryToIsValid == true, this.state.aboutTourIsValid == true) {
+            this.state.countryToIsValid == true, this.state.aboutTourIsValid == true, this.state.saleIsValid == true) {
 
             let form = new FormData();
             form.append('tourId', this.state.tourId);
@@ -136,10 +175,12 @@ export class UpdateTour extends Component {
             form.append('countryTo', this.state.countryTo);
             form.append('dateStart', this.state.dateStart);
             form.append('cost', this.state.cost);
+            form.append('sale', this.state.sale);
             form.append('duration', this.state.duration);
             form.append('aboutTour', this.state.aboutTour);
             form.append('transport', this.state.transport);
             form.append('imagePath', this.state.imagePath);
+            form.append('isHotTour', this.state.isHotTour);
            
             let url = "api/v1/tours";
             let method = 'PUT';
@@ -160,6 +201,7 @@ export class UpdateTour extends Component {
     }
 
     async loadData() {
+        
         let url = "api/v1/tours/" + this.props.match.params.id;
 
         let response = await fetch(url);
@@ -173,17 +215,20 @@ export class UpdateTour extends Component {
                 duration: results.duration,
                 dateStart: results.dateStart,
                 cost: results.cost,
+                sale: results.sale,
                 countryFrom: results.countryFrom,
                 countryTo: results.countryTo,
                 transport: results.transport,
                 aboutTour: results.aboutTour,
-                imagePath: results.imagePath
-            }));
+                imagePath: results.imagePath,
+                isHotTour: results.isHotTour
+            }));            
         }
     }
 
     async componentDidMount() {
         await this.loadData();
+        //await this.updateHotRadioBox();
     }
 
     renderForm() {
@@ -195,7 +240,9 @@ export class UpdateTour extends Component {
         let countryToColor = this.state.countryToIsValid === true ? "green" : "red";
         let aboutTourColor = this.state.aboutTourIsValid == true ? "green" : "red";
         let transportColor = this.state.transportIsValid == true ? "green" : "red";
+        let saleColor = this.state.saleIsValid === true ? "green" : "red";
 
+         
         return (
             <div className="card mb-3">
                 <div className="card-header text-center">
@@ -208,6 +255,9 @@ export class UpdateTour extends Component {
                         </div>
                         <div className="form-group">
                             <input type="number" value={this.state.cost}  placeholder="Цена" className="form-control" onChange={this.onChangeCost} style={{ borderColor: costColor }} />
+                        </div>
+                        <div className="form-group">
+                            <input type="number" value={this.state.sale}  placeholder="Для горящего тура введите скидку" className="form-control" onChange={this.onChangeSale} style={{ borderColor: saleColor }} />
                         </div>
                         <div className="form-group">
                             <input type="number" value={this.state.duration} placeholder="Продолжительность" className="form-control" onChange={this.onChangeDuration} style={{ borderColor: durationColor }} />
@@ -223,6 +273,14 @@ export class UpdateTour extends Component {
                         </div>
                         <div className="form-group">
                             <input type="text" value={this.state.transport} placeholder="Транспорт" className="form-control" onChange={this.onChangeTransport} style={{ borderColor: transportColor }} />
+                        </div>
+                        <div className="btn-group form-group" data-toggle="buttons">
+                            <label className="btn btn-success active">
+                                <input type="radio" name="options" id="option1" value="0" onChange={this.onChangeIsHotTour} autocomplete="off"/> Основной тур
+                            </label>
+                            <label className="btn btn btn-warning">
+                                <input type="radio" name="options" id="option2" value="1" onChange={this.onChangeIsHotTour} autocomplete="off"/> Горящий тур
+                            </label>
                         </div>
                         <div className="form-group">
                             <textarea value={this.state.aboutTour} placeholder="Описание" className="form-control" onChange={this.onChangeAboutTour} style={{ borderColor: aboutTourColor }} />
@@ -251,12 +309,14 @@ export class UpdateTour extends Component {
                 <div className="card-body text-center">
                     <h3>{this.state.name}</h3>
                     <p>{this.state.cost}$</p>
+                    <p>{this.state.sale > 0 ? <p>Скидка на тур {this.state.sale}%</p> : <p>На данный тур скидка не предусмотрена</p>}</p>
                     <p>{date.toLocaleDateString()}</p>
                     <p>{this.state.countryFrom}</p>
                     <p>{this.state.countryTo}</p>
                     <p>{this.state.duration} дней</p>
                     <p>{this.state.transport}</p>
                     <p>{this.state.aboutTour}</p>
+                    <p>{this.state.isHotTour == 1 ? <p>Горящий тур</p> : <p>Основной тур</p>}</p>
                     <img style={{maxWidth: '100%'}} src={decodeURIComponent(escape(window.atob(this.state.imagePath)))} alt="ФОТО" />                    
                 </div>
             </div>

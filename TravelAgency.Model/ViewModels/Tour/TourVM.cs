@@ -14,6 +14,8 @@ namespace TravelAgency.Model.ViewModels.Tour
 
         public string AboutTour { get; set; }
         public string Transport { get; set; }
+        public int IsHotTour { get; set; }
+        public int Sale { get; set; }
         public DateTime DateStart { get; set; }
     }
 }

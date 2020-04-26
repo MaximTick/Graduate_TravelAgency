@@ -19,6 +19,7 @@
         {
             public const string GetAll = Base + "/tours";
             public const string GetByPagination = Base + "/toursTemp/{pageSize}/{pageCurrent}";
+            public const string GetHotToursPagination = Base + "/hotToursTemp/{pageSize}/{pageCurrent}";
             public const string GetHotelsById = Base + "/tourhotelsTemp/{pageSize}/{pageCurrent}/{tourId}";
             public const string Create = Base + "/tours";
             public const string Get = Base + "/tours/{tourId}";

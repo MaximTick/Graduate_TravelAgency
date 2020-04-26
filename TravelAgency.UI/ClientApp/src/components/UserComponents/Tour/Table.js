@@ -19,20 +19,20 @@ class Item extends Component {
                 <div className="row"> 
                     <div className="col-md-10">                   
                         <dl className="row">
-                            <dt className="col-sm-3">Цена:</dt>
-                            <dd className="col-sm-9">{this.props.cost}$</dd>
-                            <dt className="col-sm-3">Дата отаправления:</dt>
-                            <dd className="col-sm-9">{date.toLocaleDateString()}</dd>
-                            <dt className="col-sm-3">Продолжительность:</dt>
-                            <dd className="col-sm-9">{this.props.duration} дней</dd>
-                            <dt className="col-sm-3">Место отправления:</dt>
-                            <dd className="col-sm-9">{this.props.countryFrom}</dd>
-                            <dt className="col-sm-3">Место прибытия:</dt>
-                            <dd className="col-sm-9">{this.props.countryTo}</dd>
-                            <dt className="col-sm-3">Транспорт:</dt>
-                            <dd className="col-sm-9">{this.props.transport}</dd>
-                            <dt className="col-sm-3">Описание тура:</dt>
-                            <dd className="col-sm-9">{this.props.aboutTour}</dd>
+                            <dt className="col-sm-4">Цена:</dt>
+                            <dd className="col-sm-8">{this.props.cost}$</dd>
+                            <dt className="col-sm-4">Дата отаправления:</dt>
+                            <dd className="col-sm-8">{date.toLocaleDateString()}</dd>
+                            <dt className="col-sm-4">Длительность:</dt>
+                            <dd className="col-sm-8">{this.props.duration} дней</dd>
+                            <dt className="col-sm-4">Место отправления:</dt>
+                            <dd className="col-sm-8">{this.props.countryFrom}</dd>
+                            <dt className="col-sm-4">Место прибытия:</dt>
+                            <dd className="col-sm-8">{this.props.countryTo}</dd>
+                            <dt className="col-sm-4">Транспорт:</dt>
+                            <dd className="col-sm-8">{this.props.transport}</dd>
+                            <dt className="col-sm-4">Описание тура:</dt>
+                            <dd className="col-sm-8">{this.props.aboutTour}</dd>
                         </dl>
                         <div>
                             <img style={{maxWidth: '100%'}} src={atob(this.props.imagePath)} />
@@ -66,6 +66,7 @@ export class TableU extends Component {
                             duration={item.duration}
                             dateStart={item.dateStart}
                             cost={item.cost}
+                            sale={item.sale}
                             countryFrom={item.countryFrom}
                             countryTo={item.countryTo}
                             transport={item.transport}

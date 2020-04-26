@@ -118,14 +118,14 @@ export class NavMenu extends Component {
                         <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
                         <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
                             <ul className="navbar-nav flex-grow">
-                                 { /*<NavItem>
-                                    <NavLink tag={Link} className="text-dark" to="/toursB">TУРЫ ПО БЕЛАРУСИ</NavLink>
-                                </NavItem> */}
-                                <NavItem> 
-                                    <NavLink tag={Link} className="text-dark" to="/hotelsU">ОТЕЛИ</NavLink>
+                                 <NavItem> 
+                                    <NavLink tag={Link} className="text-dark" to="/toursH">ГОРЯЩИЕ ТУРЫ</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink tag={Link} className="text-dark" to="/toursU">ТУРЫ</NavLink>
+                                    <NavLink tag={Link} className="text-dark" to="/toursU">ВСЕ ТУРЫ</NavLink>
+                                </NavItem>
+                                <NavItem> 
+                                    <NavLink tag={Link} className="text-dark" to="/hotelsU">ОТЕЛИ</NavLink>
                                 </NavItem>
                                { <NavItem>
                                     <NavLink tag={Link} className="text-dark" to="/auctionsU">АУКЦИОНЫ</NavLink>

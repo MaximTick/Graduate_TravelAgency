@@ -66,7 +66,7 @@ export class DeleteOrder extends Component {
 
     async loadData() {
 
-        let url = "api/v1/ordersInfo/" + this.props.match.params.id;
+        let url = "api/v1/ordersInfo/" + this.props.match.params.orderId;
 
         let response = await fetch(url);
 

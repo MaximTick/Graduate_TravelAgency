@@ -9,5 +9,6 @@ namespace TravelAgency.BLL.Intrefaces
     {
         Task<IEnumerable<HotelVM>> GetHotelsById(int pageSize, int pageCurrent, int tourId);
         Task<int> CountHotelsById(int tourId);
+        Task<IEnumerable<TourVM>> GetHotToursPagination(int pageSize, int pageCurrent);
     }
 }
