@@ -27,6 +27,16 @@
             public const string Delete = Base + "/tours/{tourId}";
         }
 
+        public static class BelTour
+        {
+            public const string GetAll = Base + "/belTours";
+            public const string GetByPagination = Base + "/belToursTemp/{pageSize}/{pageCurrent}";
+            public const string Create = Base + "/belTours";
+            public const string Get = Base + "/belTours/{belTourId}";
+            public const string Update = Base + "/belTours";
+            public const string Delete = Base + "/belTours/{belTourId}";
+        }
+
         public static class Hotel
         {
             public const string GetAll = Base + "/hotels";

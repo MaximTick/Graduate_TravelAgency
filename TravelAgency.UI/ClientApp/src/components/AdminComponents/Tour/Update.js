@@ -317,7 +317,7 @@ export class UpdateTour extends Component {
                     <p>{this.state.transport}</p>
                     <p>{this.state.aboutTour}</p>
                     <p>{this.state.isHotTour == 1 ? <p>Горящий тур</p> : <p>Основной тур</p>}</p>
-                    <img style={{maxWidth: '100%'}} src={decodeURIComponent(escape(window.atob(this.state.imagePath)))} alt="ФОТО" />                    
+                    <div><img style={{maxWidth: '100%'}} src={atob(this.state.imagePath)} alt="Фото"/></div>                    
                 </div>
             </div>
         );

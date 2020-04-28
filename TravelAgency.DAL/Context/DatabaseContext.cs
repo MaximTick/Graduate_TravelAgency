@@ -18,6 +18,7 @@ namespace TravelAgency.DAL.Context
         public DbSet<Orderr> Orderrs { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Auction> Auctions { get; set; }
+        public DbSet<BelTour> BelTours { get; set; }
        // public DbSet<Image> Images { get; set; }
     }
 }

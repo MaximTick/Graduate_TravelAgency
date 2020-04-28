@@ -6,6 +6,7 @@ namespace TravelAgency.DAL.Interfaces
     {
         ITourRepository Tours { get; }
         IHotelRepository Hotels { get; }
+        IBelTourRepository BelTours { get; }
         Task<int> SaveChanges();
     }
 }

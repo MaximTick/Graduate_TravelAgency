@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using System.Web.Http;
 using TravelAgency.BLL.Intrefaces;
 using TravelAgency.Model.ViewModels.Tour;
 using TravelAgency.UI.Contracts;

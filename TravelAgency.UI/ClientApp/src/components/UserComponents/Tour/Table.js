@@ -34,12 +34,12 @@ class Item extends Component {
                             <dt className="col-sm-4">Описание тура:</dt>
                             <dd className="col-sm-8">{this.props.aboutTour}</dd>
                         </dl>
-                        <div>
-                            <img style={{maxWidth: '100%'}} src={atob(this.props.imagePath)} />
-                        </div>
                     </div>
                     <div className="col-md-2 text-center">
-                            <Link className="btn btn-outline-warning" to={`/hotelsTour/${this.props.id}`}>Выбрать отель</Link>
+                         <Link className="btn btn-outline-warning" to={`/hotelsTour/${this.props.id}`}>Выбрать отель</Link>
+                    </div>
+                    <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
+                        <img style={{width: '80%', display: 'block', marginRight: 'auto', marginLeft: 'auto'}} src={atob(this.props.imagePath)} />
                     </div>
                  </div>                               
                 </div>

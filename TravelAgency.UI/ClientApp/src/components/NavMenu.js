@@ -89,6 +89,9 @@ export class NavMenu extends Component {
                         <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
                         <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
                             <ul className="navbar-nav flex-grow">
+                            <NavItem>
+                                    <NavLink tag={Link} className="text-dark" to="/toursAB">ТУРЫ ПО БЕЛАРУСИ</NavLink>
+                                </NavItem>
                                 <NavItem>
                                     <NavLink tag={Link} className="text-dark" to="/hotelsA">ОТЕЛИ</NavLink>
                                 </NavItem>
@@ -118,6 +121,9 @@ export class NavMenu extends Component {
                         <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
                         <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
                             <ul className="navbar-nav flex-grow">
+                                <NavItem> 
+                                    <NavLink tag={Link} className="fa fa-home text-dark" to="/toursBU">ТУРЫ ПО БЕЛАРУСИ</NavLink>
+                                </NavItem>
                                  <NavItem> 
                                     <NavLink tag={Link} className="text-dark" to="/toursH">ГОРЯЩИЕ ТУРЫ</NavLink>
                                 </NavItem>

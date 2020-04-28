@@ -132,7 +132,7 @@ export class CreateTour extends Component {
 
         if (this.state.nameIsValid == true && this.state.costIsValid == true &&
             this.state.durationIsValid == true && this.state.dateStartIsValid == true &&
-            this.state.countryFromIsValid == true, this.state.countryToIsValid == true) {
+            this.state.countryFromIsValid == true && this.state.countryToIsValid == true) {
 
             let form = new FormData();
             form.append('tourName', this.state.name);

@@ -27,6 +27,7 @@ namespace TravelAgency.UI.Installers
                 services.AddTransient<IUnitOfWork, UnitOfWork>();
                 services.AddTransient<ITourService, TourService>();
                 services.AddTransient<IHotelService, HotelService>();
+                services.AddTransient<IBelTourService, BelTourService>();
 
                 services.AddTransient<ICommentRepository, CommentRepository>();
                 services.AddTransient<ICommentService, CommentService>();

@@ -83,6 +83,7 @@ export class Profile extends Component {
                                     })
                                 }
                             </tbody>
+                          
                         </table>
                     </div>
                 </div>

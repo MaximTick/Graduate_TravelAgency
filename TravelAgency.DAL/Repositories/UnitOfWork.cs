@@ -11,6 +11,7 @@ namespace TravelAgency.DAL.Repositories
 
         private ITourRepository _tourRepository;
         private IHotelRepository _hotelRepository;
+        private IBelTourRepository _belTourRepository;
 
         public UnitOfWork(DatabaseContext context)
         {
@@ -40,6 +41,19 @@ namespace TravelAgency.DAL.Repositories
                 }
 
                 return _hotelRepository;
+            }
+        }
+
+        public IBelTourRepository BelTours
+        {
+            get
+            {
+                if (_hotelRepository == null)
+                {
+                    _belTourRepository = new BelTourRepository(_context);
+                }
+
+                return _belTourRepository;
             }
         }
 

@@ -25,13 +25,15 @@ class Item extends Component {
                             <dt className="col-sm-3">Описание:</dt>
                             <dd className="col-sm-9">{this.props.description}</dd>
                         </dl>
-                            <div>
-                                <img style={{maxWidth: '100%'}} src={atob(this.props.imagePath)} />
-                            </div>  
                         </div>
                         <div className="col-lg-3 noPadding text-center">
                             <Link className="btn btn-outline-success" to={`/orders/${this.props.id}`}>Забронировать </Link>
-                        </div>                       
+                        </div>
+                        <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}> 
+                            <div style={{maxWidth: '80%'}}>
+                                <img style={{width: '100%', display: 'block', marginRight: 'auto', marginLeft: 'auto'}} style={{maxWidth: '100%'}} src={atob(this.props.imagePath)} />
+                            </div> 
+                         </div>                       
                     </div>
 
                 </div>

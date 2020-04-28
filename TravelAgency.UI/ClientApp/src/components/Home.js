@@ -6,8 +6,7 @@ export class Home extends Component {
 
   render () {
     return (
-      <div>
-       
+      <div>    
         <section id="main-page">
                 <div class="wrapper">
                    <br></br> <br></br> <h2>Организуйте своё <br></br>

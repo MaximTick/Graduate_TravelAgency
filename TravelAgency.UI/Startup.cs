@@ -44,7 +44,6 @@ namespace TravelAgency.UI
                 options.AddPolicy("RequireAdministratorRole", policy => policy.RequireRole("admin"));
             });
 
-            services.AddScoped<IHotelService, HotelService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
