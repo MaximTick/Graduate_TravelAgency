@@ -3,19 +3,21 @@ import './styles.css'
 
 export class Home extends Component {
   static displayName = Home.name;
+  
 
   render () {
     return (
-      <div>    
+      <div>  
+        <div style={{marginRight: -15, marginLeft: -15}}>  
         <section id="main-page">
-                <div class="wrapper">
+                <div className="wrapper">
                    <br></br> <br></br> <h2>Организуйте своё <br></br>
             <strong>Индивидуальное путешествие</strong></h2> 
         </div>
     </section>
 
     <section id="steps">
-        <div class="wrapper">
+        <div className="container">
             <ul>
                 <li id="step-1">
                     <h4>Планирование</h4>
@@ -30,23 +32,29 @@ export class Home extends Component {
                     <h4>Путешествие</h4>
                     <p>Мы позаботимся о том, чтобы обеспечить вашу безопасность и полное спокойствие на протяжении всей поездки.</p>
                 </li>
-                <div class="clear"></div>
+                <div className="clear"></div>
             </ul>
         </div>
     </section>
 
     <section id="contact">
-        <div class="wrapper">
+        <div className="container">
             <h3>Выбирайте нас</h3>
             <p>В туристическом агентстве мы знаем, что путешествие - это человеческое приключение, 
-              а также важное финансовое обязательство для вас. Вот почему мы считаем честью учитывать все ваши ожидания, 
-              чтобы помочь вам в подготовке вашего индивидуального пребывания, кругооборота или поездки.
+              а также важное финансовое обязательство для вас. Вот почему мы стремимся учитывать все ваши ожидания, 
+              чтобы помочь вам в подготовке вашего индивидуального пребывания, путешествия или поездки.
             </p>
 
         </div>
     </section>
-
-    
+    <footer>
+        <div className="wrapper">
+            <h1>Travel Agency<span className="orange">.</span></h1>
+            <div className="copyright">Copyright © 2020.<br></br>Дипломный проект TRAVELA<br></br>
+            БЕЛОРУССКИЙ ГОСУДАРСТВЕННЫЙ ТЕХНОЛОГИЧЕСКИЙ УНИВЕРСИТЕТ</div>
+        </div>
+    </footer> 
+    </div>  
 
       </div>
     );

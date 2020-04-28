@@ -1,6 +1,10 @@
 
     /*GENERALE*/
 *
+{
+    margin: 0;
+    padding: 0;
+}
 
 .wrapper
 {
@@ -147,6 +151,8 @@
     padding-bottom: 20px;
 }
 
+
+
 .button-3
 {
     color: #ffffff;
@@ -165,10 +171,23 @@
 
     /*FOOTER*/
 
+
+footer
+{
+    height: 200px;
+    background-color: #444444;
+}
+footer h1
+{
+    color: #ffffff;
+    text-align: center;
+    padding-top: 55px;
+}
 .copyright
 {
     text-align: center;
     font-weight: bold;
-    padding-top: 30px;
+    padding-top: 3px;
     color: #777777;
 }
+

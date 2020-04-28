@@ -117,7 +117,7 @@ namespace TravelAgency.BLL.Services
                 return new HotelVM();
             }
 
-            return new HotelVM()
+            return hotelVM = new HotelVM()
             {
                 HotelId = hotel.HotelId,
                 Class = hotel.Class,

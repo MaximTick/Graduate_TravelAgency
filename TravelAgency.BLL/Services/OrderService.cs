@@ -31,6 +31,7 @@ namespace TravelAgency.BLL.Services
             }
 
             var fHotel = await _unitOfWork.Hotels.GetById(order.HotelId);
+            var fTour = await _unitOfWork.Tours.GetById(fHotel.TourId);
             fHotel.HotelSize++;
             await _unitOfWork.Hotels.Update(fHotel);
 

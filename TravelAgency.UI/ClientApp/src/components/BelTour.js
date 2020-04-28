@@ -239,7 +239,10 @@ export class TourBU extends Component {
                         </div>
                         <div id="search">
                             <Search filter={this.filterList} />
+                            
                         </div>
+                        
+
                         {/*<div className="col-sm-12 my-auto" id="search_place" style={{position: "center"}}>                                         
                            
                             <dl className="row">

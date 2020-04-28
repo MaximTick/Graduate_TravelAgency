@@ -61,7 +61,7 @@ export class Order extends Component {
         })
 
         if (response.ok) {
-            alert("Операция прошла успешно!!!");
+            alert("Вы успешно забронировали тур. На почту Вам придет уведомление");
             this.props.history.push('/hotelsU');
         } else {
             alert(`Нет свободных мест`);

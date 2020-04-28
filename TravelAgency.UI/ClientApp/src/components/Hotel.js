@@ -224,7 +224,7 @@ export class HotelU extends Component {
                             />
                         </div>
                     </div>
-                    <div className="col-md-4">
+                   {/* <div className="col-md-4">
                         <div className="card" style={{position: "sticky", top: 20}}>
                             <div className="card-header text-center">
                                 <h2>Аукционы</h2>
@@ -243,7 +243,7 @@ export class HotelU extends Component {
                                 }
                             </div>
                         </div>
-                    </div> 
+                    </div> */}
                 </div>
             </div>
         );

@@ -36,9 +36,11 @@ class Item extends Component {
                                 <dt className="col-sm-4">Транспорт:</dt>
                                 <dd className="col-sm-8">{this.props.transport}</dd>                                
                             </dl>
-                        <div>
-                                <img style={{maxWidth: '100%'}} src={atob(this.props.imagePath)} />
-                            </div>
+                            <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}> 
+                            <div style={{maxWidth: '80%'}}>
+                                <img style={{width: '100%', display: 'block', marginRight: 'auto', marginLeft: 'auto'}} style={{maxWidth: '100%'}} src={atob(this.props.imagePath)} />
+                            </div> 
+                         </div> 
                             <br></br>
                             <p className="col-sm-11">{this.props.aboutTour}</p>  
                     </div>
@@ -77,7 +79,7 @@ export class TableBU extends Component {
         if (this.props.data.length == 0) {
             return (
                 <div className="text-center">
-                    <h1>У данного тура нет отеля(:</h1>
+                    <h1></h1>
                 </div>
             );
         }

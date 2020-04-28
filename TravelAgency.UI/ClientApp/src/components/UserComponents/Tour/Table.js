@@ -38,9 +38,11 @@ class Item extends Component {
                     <div className="col-md-2 text-center">
                          <Link className="btn btn-outline-warning" to={`/hotelsTour/${this.props.id}`}>Выбрать отель</Link>
                     </div>
-                    <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
-                        <img style={{width: '80%', display: 'block', marginRight: 'auto', marginLeft: 'auto'}} src={atob(this.props.imagePath)} />
-                    </div>
+                    <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}> 
+                            <div style={{maxWidth: '80%'}}>
+                                <img style={{width: '100%', display: 'block', marginRight: 'auto', marginLeft: 'auto'}} style={{maxWidth: '100%'}} src={atob(this.props.imagePath)} />
+                            </div> 
+                         </div> 
                  </div>                               
                 </div>
             </div>

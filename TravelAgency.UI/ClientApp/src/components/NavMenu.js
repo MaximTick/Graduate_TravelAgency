@@ -101,9 +101,9 @@ export class NavMenu extends Component {
                                 <NavItem>
                                     <NavLink tag={Link} className="text-dark" to="/comments">КОММЕНТАРИИ</NavLink>
                                 </NavItem>
-                                <NavItem>
+                                {/*<NavItem>
                                     <NavLink tag={Link} className="text-dark" to="/auctionsA">АУКЦИОНЫ</NavLink>
-                                </NavItem>
+                                </NavItem> */}
                                 <NavItem>
                                     <NavLink className="text-dark" style={{ cursor: "pointer" }} onClick={this.modalSignOut}>ВЫЙТИ</NavLink>
                                 </NavItem>
@@ -128,14 +128,14 @@ export class NavMenu extends Component {
                                     <NavLink tag={Link} className="text-dark" to="/toursH">ГОРЯЩИЕ ТУРЫ</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink tag={Link} className="text-dark" to="/toursU">ВСЕ ТУРЫ</NavLink>
+                                    <NavLink tag={Link} className="text-dark" to="/toursU">ЗАРУБЕЖНЫЕ ТУРЫ</NavLink>
                                 </NavItem>
                                 <NavItem> 
                                     <NavLink tag={Link} className="text-dark" to="/hotelsU">ОТЕЛИ</NavLink>
                                 </NavItem>
-                               { <NavItem>
+                               {/* <NavItem>
                                     <NavLink tag={Link} className="text-dark" to="/auctionsU">АУКЦИОНЫ</NavLink>
-                               </NavItem> }
+                               </NavItem> */}
                                 <NavItem>
                                     <NavLink tag={Link} className="text-dark" to="/profile">ПРОФИЛЬ</NavLink>
                                 </NavItem>

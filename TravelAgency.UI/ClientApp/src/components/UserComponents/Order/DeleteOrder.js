@@ -94,7 +94,7 @@ debugger
         return (
             <div className="container">
                 <div className="row">
-                    <div className="col-md-12">
+                    <div className="col-md-10">
                         <nav aria-label="breadcrumb">
                             <ol className="breadcrumb">
                                 <Link className="breadcrumb-item" to={`/`}>Главная</Link>
@@ -102,9 +102,13 @@ debugger
                                 <li className="breadcrumb-item active" aria-current="page">Отмена Бронирования</li>
                             </ol>
                         </nav>
+                        </div>
+                        <div className="col-md-2" style={{marginTop: 6}}>
+                        <input type="button" className="btn btn-danger" value="Отменить бронь" onClick={this.modalOrder} />
                     </div>
                 </div>
 
+               
 
                 <div className="row">
                     <div className="col-md-6 mb-3">
@@ -143,10 +147,7 @@ debugger
                         </div>
                     </div>
                 </div>
- 
-                    <div className="col-md-12">
-                          <input type="button" className="btn btn-danger" value="Отменить бронь" onClick={this.modalOrder} />
-                     </div>
+                    
 
 
                 <Modal isOpen={this.state.modalOrder} >

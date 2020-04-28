@@ -52,7 +52,7 @@ export class TableU extends Component {
         if (this.props.data.length == 0) {
             return (
                 <div className="text-center">
-                    <h1>У данного тура нет отеля(:</h1>
+                    <h1></h1>
                 </div>
             );
         }
