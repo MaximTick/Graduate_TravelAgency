@@ -53,7 +53,7 @@ namespace TravelAgency.BLL.Services
                 HotelId = order.HotelId,
                 UserId = user.UserId,
             });
-             new EmailService().SendAsyncEmail(user.Email, "TRAVELA", $"Вы успешно забронировали тур {fTour.TourName} в отеле {fHotel.HotelName}.\n Дата отправления: {fTour.DateStart} \nМесто отправления: {fTour.CountryFrom} \nМесто прибытия: {fTour.CountryTo}");
+             new EmailService().SendAsyncEmail(user.Email, "TRAVELA", $"Вы успешно забронировали тур {fTour.TourName} в отеле {fHotel.HotelName}.\n Дата отправления: {fTour.DateStart} \nМесто отправления: {fTour.CountryFrom} \nМесто прибытия: {fTour.CountryTo}. Для подтверждения заказа с вами свяжется наш специалист.");
             return fOrder;
         }
 
@@ -94,8 +94,6 @@ namespace TravelAgency.BLL.Services
                 TourName = tour.TourName,
                 Transport = tour.Transport,
                 AboutTour = tour.AboutTour
-                //ImagePathT = tour.ImagePath,
-                //ImagePath = hotel.ImagePath
             };
         }
     }

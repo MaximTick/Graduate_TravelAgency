@@ -155,7 +155,7 @@ export class Login extends Component {
                         </ModalHeader>
                         <ModalBody>
                             <p><b>пример Email:</b> qwerty@gmail.com</p>
-                            <p><b>Пароль:</b>Длинаа не менее 6 символов.</p>
+                            <p><b>Пароль:</b>Длина не менее 6 символов.</p>
                         </ModalBody>
                     </Modal>
                     <Modal isOpen={this.state.modalSignIn} >
